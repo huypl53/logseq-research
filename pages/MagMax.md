@@ -1,0 +1,15 @@
+- Desciption
+	- is a [[Model merging]] strategy that enables continual learning of large pre-trained models for successive tasks
+- Keywords
+	- [[Model merging]]
+- Contributions
+	- combine **sequential fine-tuning** with a **maximum magnitude weight selection** for effective knowledge integration across tasks.
+	- experience that **weight averaging and random weight selection - work surprisingly well**
+- Survey
+	- Old CL approaches
+		- retain knowledge from previous task
+		- grow network while learning new tasks
+		- replay buffer
+	- others works: They fine-tune pre-trained models independently for each task foregoing the potential of knowledge transfer.
+- Vocab
+	- **seamlessly consolidate the knowledge** after the training on new tasks

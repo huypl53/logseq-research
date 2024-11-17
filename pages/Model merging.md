@@ -1,0 +1,2 @@
+- Features
+	- **weight averaging and random weight selection** surprisingly hold up well in various continual learning contexts
