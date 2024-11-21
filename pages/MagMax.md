@@ -1,19 +1,23 @@
-- Desciption
+- Intro
+  id:: 673aabc6-8615-4c36-bffd-6aa639c0c1b6
 	- is a [[Model merging]] strategy that enables continual learning of large pre-trained models for successive tasks
 - Keywords
 	- [[Model merging]]
 - Contributions
+  collapsed:: true
 	- experience that **weight averaging and random weight selection - work surprisingly well**
 	- combine **sequential fine-tuning** with a **maximum magnitude weight selection** for effective knowledge integration across tasks.
 		- $\tau_i = \theta_i - \theta_0$ is the *task vector* of task i-th. For each parameter $p\in\{1,2,\dots,d\}$, select the max magnitude over all the tasks' vectors to update $\tau_{MAGMAX}^{p}$
 	- $\mathcal{H}_1$: parameters that change the most during finetuning are the most important for the task. observe that only **a small fraction of high-magnitude parameters** in task vectors are **relevant for the model** performance. Keeping only 20% of the highest magnitude parameters yields results similar to fully fine-tuned models
 	- $\mathcal{H}_2$: sequential fine-tuning reduces sign conflicts. when finetuning model on several tasks, sometimes observe a **disagreement between the directions of tasks-specific updates**. Such a situation is denoted as *sign conflict*, as different task vectors have inconsistent signs for the same parameters
 	-
-- Survey
+- Related works
+  collapsed:: true
 	- Old CL approaches
 		- retain knowledge from previous task
 		- grow network while learning new tasks
 		- replay buffer
 	- others works: They fine-tune pre-trained models independently for each task **foregoing the potential** of knowledge transfer.
 - Vocab
+  collapsed:: true
 	- **seamlessly consolidate the knowledge** after the training on new tasks
