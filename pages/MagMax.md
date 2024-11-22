@@ -4,7 +4,6 @@
 - Keywords
 	- [[Model merging]]
 - Contributions
-  collapsed:: true
 	- experience that **weight averaging and random weight selection - work surprisingly well**
 	- combine **sequential fine-tuning** with a **maximum magnitude weight selection** for effective knowledge integration across tasks.
 		- $\tau_i = \theta_i - \theta_0$ is the *task vector* of task i-th. For each parameter $p\in\{1,2,\dots,d\}$, select the max magnitude over all the tasks' vectors to update $\tau_{MAGMAX}^{p}$
@@ -21,3 +20,5 @@
 - Vocab
   collapsed:: true
 	- **seamlessly consolidate the knowledge** after the training on new tasks
+- Self conclusion
+-

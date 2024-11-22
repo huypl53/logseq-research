@@ -1,4 +1,4 @@
-- Features
+- Intro
 	- apply `Semantic Shift Estimation` on output prototypes of adapters. In later tasks, generate new samples from saved prototypes for further tuning without storage burden
 	-
 -
