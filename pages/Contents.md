@@ -1,2 +1,3 @@
--
-	-
+- Ideas for new paper
+	- Method
+		-
