@@ -3,7 +3,7 @@
 - Contributions
 	- >Besides, maintaining the discrimination among seen classes is also essential to mitigate catastrophic forgetting.
 	- OnPro of **each class** $\mathbf{p}_i = \frac{1}{n_i}\sum\nolimits_j\mathbf{z}_j\cdot \mathbb{1}\{y_j = i\}$ is the **mean representation** in a mini-batch. After a session, we get a set of $K$ online prototypes $\mathcal{P} = \left\{ \mathbf{p}_{i} \right\} ^{K}_{i=1}$ from the batch data X (from dataset $\mathcal{D}_t$ of task $t^{th}$) and $K^b$ prototypes $\mathcal{P}^b$ from **the memory bank batch** $X^b$
-	- Online protype equilibrium
+	- OPE (Online protype equilibrium
 		- using a **contrastive loss**  learn representative features of each class by pulling online prototypes $\mathcal{P}$ and their augmented views $\widehat{\mathcal{P}}$ closer in the embedding space, and learn discriminative features between classes by pushing online prototypes of different classes away
 	- Adaptive Prototypical Feedback (APF)
 		- Specifically, APF adaptively **selects more samples from easily misclassified classes** in $\mathcal{M}$ for mixup according to the probability distribution $P$.
