@@ -33,17 +33,23 @@ Methods
 		- introduces trainable parameters called **prompts** into the input space after the embedding layers. The key ideas is to **update these prompts during fine-tuning**, leaving the pretrained model untouched
 		- Cons: when the **same prompt params are used across different learning sessions**, VPT can also **suffer from catastrophic forgetting**
 	- Contrastive Learning #card
+	  collapsed:: true
 		- tags:: #OPE
 		- Pros: train the model to **minimize the distance between similar** pairs (positive sample) while **maximizing the distance between dissimilar** pairs (negative samples). This helps prevent model from forgetting learned information
 	- Prototypes #card
+	  collapsed:: true
 		- tags:: OPE
 		- Prototypes are the compact feature representations derived from intermediate layers of the model.
 		- Pros: resource-efficient
 		- Cons: may lose some fine-grained information -> sequentially update prototypes in each session, update by a small rate of new knowledge
 	- APF (Adaptive Prototypical Feedback)
+	  collapsed:: true
 		- tags:: #OPE, #CL/Sampling
 		- Select replay data based on rates of misclassification
+	- Model merging #card
+		- tags:: #MagMax
 - Papers
+  collapsed:: true
 	- #SSIAT
 	- #MagMax
 	- #OPE
