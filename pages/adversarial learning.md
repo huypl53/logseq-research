@@ -1,0 +1,2 @@
+- a model is trained by incorporating adversarial challenges to improve performance, robustness
+- involve 2 components: **one generate challenges or data, and the other learns to overcome or adapt to them**
