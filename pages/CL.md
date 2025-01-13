@@ -49,10 +49,19 @@ Methods
 	- Model merging #card
 		- tags:: #MagMax
 - Papers
-  collapsed:: true
 	- #SSIAT
 	- #MagMax
 	- #OPE
+	- #CoFiMA
+	- #EWC
+	- #Fisher
+	-
+- ## Keywords
+- plasticity: learning on the new task
+- stability: performance on the previously learned concepts
+- #OOD
+-
+-
 -
 - Ideas for new paper
 	- benchmark on contrastive loss
