@@ -1,0 +1,1 @@
+- >represent each word in a **fixed vocabulary** as a low-dimensional (much smaller than vocabulary size) vector
