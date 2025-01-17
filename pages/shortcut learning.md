@@ -1,0 +1,1 @@
+- >occurs when a neural network focuses on simplistic features, rather than learning more complex, representative features

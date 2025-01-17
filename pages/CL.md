@@ -42,13 +42,16 @@ Methods
 		- Prototypes are the compact feature representations derived from intermediate layers of the model.
 		- Pros: resource-efficient
 		- Cons: may lose some fine-grained information -> sequentially update prototypes in each session, update by a small rate of new knowledge
-	- APF (Adaptive Prototypical Feedback)
+	- [[APF]] (Adaptive Prototypical Feedback)
 	  collapsed:: true
 		- tags:: #OPE, #CL/Sampling
 		- Select replay data based on rates of misclassification
 	- Model merging #card
 		- tags:: #MagMax
+	- [[mixture-of-expert]]
+	-
 - Papers
+  collapsed:: true
 	- #SSIAT
 	- #MagMax
 	- #OPE
@@ -57,10 +60,11 @@ Methods
 	- #Fisher
 	-
 - ## Keywords
-- plasticity: learning on the new task
-- stability: performance on the previously learned concepts
-- #OOD
--
+	- plasticity: learning on the new task
+	- stability: performance on the previously learned concepts
+	- #OOD
+- ## Problems
+	- [[shortcut learning]]
 -
 -
 - Ideas for new paper
