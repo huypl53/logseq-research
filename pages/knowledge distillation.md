@@ -1,0 +1,15 @@
+- Purpose
+	- reduce model size for real time application
+-
+- Methods
+-
+- Loss construction
+	- response based: minimize output diversity of teacher and student
+	- feature based: scale up student model to compare student features to teacher features
+- Loss function
+	- Kullback–Leibler divergence loss
+	- CE loss
+- Misc
+	- pruning
+	- quantization
+	-

@@ -1,6 +1,5 @@
-Methods
-
-	- knowledge distillation #card
+- [[CL/Methods]]
+	- [[knowledge distillation]] #card
 	  card-last-score:: 3
 	  card-repeats:: 2
 	  card-next-schedule:: 2024-11-30T06:03:08.287Z
