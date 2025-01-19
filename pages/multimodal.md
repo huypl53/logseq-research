@@ -1,0 +1,1 @@
+- Visual Question Answering (VQA):A task in Machine Learning that aims to answer a question related to a given image.

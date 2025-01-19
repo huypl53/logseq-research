@@ -1,13 +1,12 @@
 - Purpose
+	- transfer knowledge from large, computationally expensive model to smaller models
 	- reduce model size for real time application
 	- infer on CPU
 -
 - Methods
--
-- Loss construction
-	- response based: minimize output diversity of teacher and student
-	- feature based: scale up student model to compare student features to teacher features
-	- ?relation based
+	- response based: minimize **output diversity** of teacher and student
+	- feature based: scale up student model to **compare intermediate features** between students and teacher
+	- relation based: Relationships between data points. In a model, extract the relationship between its data point using methods like **distance loss** or **cosine loss**
 - Loss function
 	- Kullback–Leibler divergence loss
 	- CE loss
@@ -15,6 +14,6 @@
 	- pruning
 	- quantization
 	- encoder only
-	- softmax temparature
+	- Temperature scaling: reduce the sharpness of a model's output probabilities -> high sharpness means that teacher model favor some class (so confident) rather than others, which results in student modes mainly focus on those preferred classes
 	-
 	-

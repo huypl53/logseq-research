@@ -1,0 +1,6 @@
+- Main Techniques:
+	- Quantization.
+	- Weights Pruning.
+	- [[knowledge distillation]]
+	- High-performance libraries
+-
