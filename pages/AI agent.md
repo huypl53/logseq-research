@@ -14,6 +14,9 @@
 - ## Reviews
 	- ![image.png](../assets/image_1737301254789_0.png)
 	- An AI agent can be represented as a graph. The core component of LangChain for this task is **GraphState**. When user sends messages, the messages are **forwarded to LLM**. LLM might need helps to look up something. LLM returns query to Graph, graph, if condition edge passes, route the query to **tool** by **take_action**
+	- e.g: Agentic search tools
+		- Init an agent consisting a graph of nodes which are **LLM and action**. LLM can make **decision to call the initiated tool or not.** Note that the tools are agent's attributes, LLM only **control the tool invocation**. In the action node, based on the decision of the LLM node, the graph invoke the tool then return the control back to LLM
+		- ![image.png](../assets/image_1738597478708_0.png)
 - Miscs
 	- collaboration mechanisms
 		- actors
