@@ -1,6 +1,14 @@
 - Description
 - Keywords
 	- various tools, long-term memory support, document processing
+- Concepts
+	- routines
+		- > a routine is a set of specific steps to accomplish a overall goal
+		- define raw python functions, called **tools**, to handle specific tasks
+		- convert the tools into tool_schema that can be attach to LLM
+		- based on instructions, LLM decides to **call specific tools** and pass relevant **arguments** to the tools
+	- handoffs
+		- > an agent (or routine) handing off an active conversation to another agent
 - Components
 - Usage
 - Limits
