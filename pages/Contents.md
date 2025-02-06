@@ -1,4 +1,1 @@
 -
-- collective intelligence
-	- refers to the emergent capability of a group of agents (which can be humans, artificial agents, or a combination of both) to **work collaboratively, share information, and solve problems** more effectively than individual agents acting alone
--
