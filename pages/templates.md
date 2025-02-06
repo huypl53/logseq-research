@@ -3,8 +3,8 @@
   template-including-parent:: false
 	- Keywords
 	- Intro
-	- Contributions
 	- Related works
+	- Contributions
 	- Vocab
 -
 - System

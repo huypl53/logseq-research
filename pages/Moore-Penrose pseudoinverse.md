@@ -1,0 +1,11 @@
+- Keywords
+- Intro
+- Related works
+- Contributions
+	- Suppose that we have a system: $$H \cdot w = Y$$, where:
+		- $H$: hidden layer or activation
+		- $w$: desired weights to find
+		- $Y$: target output
+	- Instead of update the parameters continuously leveraging gradient descent, we can do $w = H^{+} \cdot Y$, where:
+		- $H+$ denotes Moore-Penrose pseudoinverse
+- Vocab
