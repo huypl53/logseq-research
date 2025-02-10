@@ -1,5 +1,7 @@
 - >Continual Model Averaging
 - Weighted Ensemble Models using Fisher
+- Keywords
+	- > [[Model merging]], [[Fisher]]
 - Methods
 	- Inspired by #EWC and #Fisher
 	- Store
