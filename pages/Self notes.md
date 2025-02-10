@@ -1,4 +1,0 @@
-- Paper
-	- Experiment
-		- introduce dataset, optimizer, hyper-param selection like #MagMax
-		-
