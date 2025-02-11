@@ -1,0 +1,6 @@
+- Methods
+	- start with a very small LR. Use it for a mini-batch, find the loss afterwards, then increase the LR by some percentage (e.g double it each time or exponential)
+	- Do those steps again with another mini-batch, track the loss, increase LR again.
+	- Keep doing this until the loss get worse, not better. We select the LR lower than this point a bit. Then chose the LR either:
+		- **One order of magnitude less than** where the minimum loss was achieved (i.e., the minimum divided by 10)
+		- The last point where the loss was **clearly decreasing**

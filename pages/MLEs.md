@@ -1,0 +1,2 @@
+- > are a method of estimating the parameters of a statistical model by **maximizing the likelihood function**. The likelihood function measures how well the model explains the observed data for a given set of parameters.
+- > The likelihood function $L(\theta)$ is the probability of observing the data $X$ given the parameters $\theta$

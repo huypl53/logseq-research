@@ -1,0 +1,2 @@
+- inner product: produces a scalar
+- outer product: m x n and n x p, returns m x p

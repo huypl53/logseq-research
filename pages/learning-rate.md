@@ -1,0 +1,2 @@
+- #LR-finder train mini-batch with gradually increased LR to find the best one then train again
+- #LR-discriminate
