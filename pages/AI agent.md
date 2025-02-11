@@ -7,6 +7,16 @@
 			- 5G/6G networks
 			- natural network generation
 		- Artificial collective intelligence
+- Keywords
+	- [[human-in-the-loop]]
+	-
+- Intro
+- Related works
+- Contributions
+- Experiment
+- Review
+	- Pros
+	- Cons
 - ## Frameworks
 	- [[langgraph]]
 	- [[swarm]]

@@ -27,3 +27,6 @@
 		- 38. McDonnell, M.D., Gong, D., Parvaneh, A., Abbasnejad, E., van den Hengel, A.: Ranpac: Random projections and pre-trained models for continual learning. Adv. Neural Inform. Process. Syst. 36 (2024) 2, 4, 10, 11, 9
 		- 47. Panos, A., Kobe, Y., Reino, D.O., Aljundi, R., Turner, R.E.: First session adaptation: A strong replay-free baseline for class-incremental learning. In: Int. Conf. Comput. Vis. (2023) 2
 		- 88. Zhou, D.W., Ye, H.J., Zhan, D.C., Liu, Z.: Revisiting class-incremental learning with pre-trained models: Generalizability and adaptivity are all you need (2023) 2
+- Review
+	- Bài Class incremental learning
+	- Áp dụng model merging sử dụng Fisher Maxtrix dạng đường chéo -> giảm tính toán, thao tác tính fisher matrix tương đương chạy thêm 1 epoch

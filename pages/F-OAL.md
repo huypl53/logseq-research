@@ -1,7 +1,17 @@
 - Keywords
+	- tags:: [[CL]]
 	- > [[Moore-Penrose]]
 - Intro
 - Related works
 - Contributions
 - Experiment
 - Vocab
+- Review
+	- Sử dụng Moore-penrose pseudoinverse để ước lượng parameters dựa vào output labels và hidden features
+	- Ưu điểm: ko sử dụng gradient descent
+		- ko cần back propagation -> fast training
+		- tránh được local minima
+		- cấu trúc đơn giản: chỉ update 1 Analytic Classifier, thích hợp khi kết hợp với feature extractor tốt như ViT
+	- Nhược điểm:
+		- nhạy cảm với noise
+		- nếu các hidden features -> yêu cầu tính toán lớn
