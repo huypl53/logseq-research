@@ -1,0 +1,10 @@
+- Keywords
+- Intro
+	- update model analytically
+	- no gradient descent, no back propagation
+- Related works
+- Contributions
+	- take an example of model: $$Hw=Y$$, where $$H$$ is hidden model
+	-
+- Experiment
+- Vocab
