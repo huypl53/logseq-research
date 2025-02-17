@@ -1,0 +1,2 @@
+- **RDS instances are managed services**, and AWS provides a **DNS endpoint** instead of a fixed IP.
+- The private IP **may change** when RDS restarts, so AWS prefers you use the **endpoint**.
