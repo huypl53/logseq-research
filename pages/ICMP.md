@@ -1,0 +1,2 @@
+- > for ping
+- [[aws/NatGatway]] doesn't Support ICMP
