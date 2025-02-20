@@ -1,0 +1,2 @@
+- Open-domain Question Answering (ODQA):Refers to the task of providing answers to questions o**ver a road range of topics,** leveraging **vast corpora of unstructured text** without being restricted to a specific domain.
+-

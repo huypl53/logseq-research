@@ -1,0 +1,2 @@
+- > Auto Scaling Group
+- be able to create new instance from provided Launch template
