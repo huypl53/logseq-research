@@ -20,3 +20,4 @@
 - ## Frameworks
 	- [[langgraph]]
 	- [[swarm]]
+	- [[crewAI]]

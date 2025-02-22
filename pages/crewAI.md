@@ -1,0 +1,24 @@
+- fields: agents, tasks, process, manager <agent/llm>
+- flow
+	- crew.kickoff()
+		- loop agents
+			- agents.create_executor()
+		- ?planning: update tasks' description by new plan
+		- self._execute_tasks()
+			- loop self.tasks
+				- select agent: task's agent or manager agent
+				- sync/async
+					- sync
+						- get context
+						- task.execute_sync(agent, context, tools) -> TaskOutput
+							- agent.execute_task(task, context, tools)
+								- agent_executor.invoke(task_prompt, tools)
+									- agent_executor._invoke_loop()
+										- loop util reaching TaskFinish instance
+											- answer = self._get_llm_response()
+									- _handle_human_feedback()
+										- self._ask_human_input()
+										- _handle_regular_feedback()
+											- loop _process_feedback_iteration() stop when no user input
+												- agent_executor.invoke_loop()
+						- save result to task_outputs
