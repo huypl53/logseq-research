@@ -1,2 +1,10 @@
 - > Security Group
--
+- Stateless: mean that a ALLOW rule on port 80 allow traffic both in and out through port 80
+- Can be referred by **IP or by other SG**
+- SG regulate:
+	- Access to ports
+	- Authorized IP ranges - IPv4 and IPv6
+	- In/out traffic
+- Good to know:
+	- -> mul instances
+	- Locked down to a region/VPC

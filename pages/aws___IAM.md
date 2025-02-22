@@ -1,0 +1,5 @@
+- > Identification and access management
+- Users inherit policies from group
+- root can create alias for publicly access and IAM user to login
+- [[aws/IAM/Policies]
+- ![Screenshot 2025-02-22 13:06:00.png](../assets/Screenshot_2025-02-22_13:06:00_1740204403588_0.png)

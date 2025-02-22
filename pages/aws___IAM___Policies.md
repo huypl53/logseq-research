@@ -1,0 +1,9 @@
+- ![image.png](../assets/image_1740194376818_0.png)
+- policies structure
+	- Statement
+		- effect: allow, deny
+		- principle: account/user/role to which is applied to
+		- action:
+		- [condition]
+- Policies can be add to a group or an user directly
+- Policies can be created in the form of its structure above

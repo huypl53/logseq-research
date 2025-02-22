@@ -29,6 +29,7 @@
 		- Stream the messages that AI agent receives and the observation messages which are results
 		- Token streaming: "So for each token of the LLM call we might want to stream the output". The streaming tokens make the output look like human writting
 - ## Practices
+  collapsed:: true
 	- Create `Agent` for persistance
 		- Define custom `AgentState` type
 		- create graph
@@ -37,3 +38,39 @@
 			- compile graphs
 		- save tools
 		- configure `thread_id` for identically access state of the graph's thread while invoking `graph.stream`
+- [[human-in-the-loop]]
+	- https://langchain-ai.github.io/langgraph/concepts/human_in_the_loop
+	- `human node` can return message to next node/ return Command for routing
+	- Approve or Reject
+		- > Depending on the human's approval or rejection, the graph can **proceed with the action** or **take an alternative path**.
+		- ```python
+		  def human_approval(state: State) -> Command[Literal["some_node", "another_node"]]:
+		    if is_approved:
+		      return Command(goto="some_node")
+		    else:
+		      return Command(goto="another_node")
+		  ```
+	- Review & Edit State
+	  collapsed:: true
+		- ```python
+		  def human_editing(state: State):
+		      ...
+		      result = interrupt(
+		          # Interrupt information to surface to the client.
+		          # Can be any JSON serializable value.
+		          {
+		              "task": "Review the output from the LLM and make any necessary edits.",
+		              "llm_generated_summary": state["llm_generated_summary"]
+		          }
+		      )
+		  
+		      # Update the state with the edited text
+		      return {
+		          "llm_generated_summary": result["edited_text"] 
+		      }
+		  ```
+	- Review Tool Calls
+		- >A human can review and edit the output from the LLM
+		- routing can be done as in previous examples
+	- Multi-turn conversation
+		- > A **multi-turn conversation architecture** where an **agent and human node** cycle back and forth until the agent decides to hand off the conversation to another agent or another part of the system. **One or more agents** may need to carry out multi-turn conversations with a human
