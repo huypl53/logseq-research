@@ -1,6 +1,5 @@
 > tags:: [[cloud computing]]
 
--
 - Horizontal Scaling
   collapsed:: true
 	- Create launch template
@@ -20,10 +19,16 @@
 	- Create [[aws/EC2/ASG]] with the created Launch Template, attach it to [[aws/EC2/TG]]
 	- {{renderer excalidraw, excalidraw-2025-02-20-21-24-15}}
 - [[aws/IAM]]
-- Common problems
-	- application is accessible (timeout) -> [[aws/SG]] issuse
-	- "connection refused" -> application error/not launched
-- Recommendation
-	- Should run `aws configure` on CLI: #card
-	  id:: 67b97e15-ef4a-401e-94de-1cd14ec5db7c
-		- ((67b96665-2d3f-463c-b4cd-4b9c1c50589a))
+- deck:: aws
+	- Common problems
+	  collapsed:: true
+		- application is accessible (timeout) #card
+		  id:: 67b97621-cd78-4090-9d94-ad42a7bfcc4b
+			- -> [[aws/SG]] issuse
+		- "connection refused" -> application error/not launched
+	- Recommendation
+	  collapsed:: true
+		- Should run `aws configure` on CLI: #card
+		  id:: 67b97e15-ef4a-401e-94de-1cd14ec5db7c
+			- ((67b96665-2d3f-463c-b4cd-4b9c1c50589a))
+			-
