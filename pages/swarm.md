@@ -12,4 +12,10 @@
 - Components
 - Usage
 - Limits
-- Flows
+- Flow
+	- swarm.run_and_stream()
+		- while len(messages) < MAX_TURN
+		- swarm.get_chat_completion(active_agent, context, )
+		- loop through message.tool_calls
+		- swarm.handle_tool_calls() -> update history
+		- ?update active_agent
