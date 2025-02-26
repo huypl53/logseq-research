@@ -1,0 +1,1 @@
+- > you commit to use EC2 for a fixed time: month, year... with a fixed price, specific size, region for **specific instance types**

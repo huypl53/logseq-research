@@ -1,3 +1,3 @@
-- > out-of-distribution
+- > out-of-distribution happens when model encounters data that significantly deviates from the training distribution
 - Weight averaging
 	- #MagMax

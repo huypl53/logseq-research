@@ -1,0 +1,6 @@
+- > Spot requests: user set a ceiling price, if it is not lower than the Spot price, the user gest the instance. If your bid no longer covers the market rate or your bid is lower than the Spot Price, AWS reclaims your instance
+- Compares to [[aws/ec2/launch types/On-demand]]
+- ## Usage
+	- be suitable with fault-tolerant interruptions that don't ruin the job
+	- the resuming is easy with checkpoints
+	- save money
