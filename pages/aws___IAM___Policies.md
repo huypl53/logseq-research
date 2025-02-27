@@ -1,3 +1,4 @@
+- > JSON specified permissions demonstrate which services **a user, group, role** can't do in AWS
 - ![image.png](../assets/image_1740194376818_0.png)
 - policies structure
 	- Statement

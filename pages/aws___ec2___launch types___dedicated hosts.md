@@ -1,1 +1,2 @@
 - > Physical servers fully dedicated to user's use, not shared with other AWS customers
+-
