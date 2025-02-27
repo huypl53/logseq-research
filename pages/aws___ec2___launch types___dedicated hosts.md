@@ -1,2 +1,3 @@
 - > Physical servers fully dedicated to user's use, not shared with other AWS customers
 - Dedicated Hosts support **Bring Your Own License (BYOL)** for software like Microsoft Windows Server, SQL Server, or Oracle, where you use existing per-core or per-socket licenses. AWS also offers **License Included** options (e.g., Windows via AWS licensing), but BYOL is the big draw for cost savings and compliance.
+-

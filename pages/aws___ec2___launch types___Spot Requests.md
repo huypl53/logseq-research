@@ -4,3 +4,6 @@
 	- be suitable with fault-tolerant interruptions that don't ruin the job
 	- the resuming is easy with checkpoints
 	- save money
+- ## [[aws/ec2/launch types/Spot Fleets]]
+-
+-

@@ -1,0 +1,4 @@
+- Spot Fleets use "Spot Instances," which are spare EC2 instances that AWS sells at a massive discount
+- "target capacity," which is the amount of compute power you need
+- You can choose if a spot instance is terminated when AWS reclaims it, or if it is hibernated.
+-
