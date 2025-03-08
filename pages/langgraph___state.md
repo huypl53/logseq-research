@@ -1,0 +1,10 @@
+- Framework
+	- Description
+		- consists of the *schema of the graph* and a `reducer` function (specify how to apply updates to state)
+		- be passed to `nodes` and `edges` in graph
+	- Keywords
+	- Concepts
+	- Components
+	- Usage
+	- Limits
+	- Flows

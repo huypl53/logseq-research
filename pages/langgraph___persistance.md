@@ -1,0 +1,25 @@
+- **Short-term memory**
+	- > thread-scoped memory
+	- be part of agent's **state**
+	- be persisted to db using **Checkpointers**
+- **Long-term memory**
+	- > shared **across conversational threads**
+	- can be recalled at any time in **any thread** by leveraging **stores**
+	- are scoped to any custom **namespace**, not just within a single thread ID
+	- use cases: storing user profiles, building knowledge bases, managing global preferences
+- ### Streaming
+	- Stream the messages that AI agent receives and the observation messages which are results
+	- Token streaming: "So for each token of the LLM call we might want to stream the output". The streaming tokens make the output look like human writing
+-
+- ## Checkpoints
+  id:: 67cbbe45-9923-4e3e-a77a-9e6bb73e83ce
+	- graph contains nodes, edges. Each execution in node is updated to **graph's state**
+	- state and metadata packaged at every super-step to form a **checkpoint**
+	- **a thread has a collection of checkpoints**
+- ## Super-step
+-
+- ## Q&A
+- what is namespace
+- Usage of checkpoints and thread:
+	- Thread helps get full **history** of graph execution, latest state (without checkpoint specified)
+	- By using checkpoint, you can rollback to a specific snapshot of the state to **update it, replay it**

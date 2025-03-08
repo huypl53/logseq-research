@@ -12,6 +12,8 @@
 		- Agent state is **accessible** to all parts of the graph
 		- Be **local** to the graph
 		- Can be stored in a persistence layer: can **resume/update** that state anytime
+	- **Cognitive architecture**
+		-
 - ## Reviews
   collapsed:: true
 	- ![image.png](../assets/image_1737301254789_0.png)
@@ -20,14 +22,6 @@
 		- Init an agent consisting a graph of nodes which are **LLM and action**. LLM can make **decision to call the initiated tool or not.** Note that the tools are agent's attributes, LLM only **control the tool invocation**. In the action node, based on the decision of the LLM node, the graph invoke the tool then return the control back to LLM
 		- ![image.png](../assets/image_1738597478708_0.png)
 - ## Miscs
-  collapsed:: true
-	- ### Persistance
-		- Check pointer
-			- >is the **state** after and between every node. Normally when we refresh the code, we lose the context history. Now we can save the **graph state into a database** like sql, postgre, redis
-			-
-	- ### Streaming
-		- Stream the messages that AI agent receives and the observation messages which are results
-		- Token streaming: "So for each token of the LLM call we might want to stream the output". The streaming tokens make the output look like human writting
 - ## Practices
   collapsed:: true
 	- Create `Agent` for persistance
