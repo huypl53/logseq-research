@@ -1,0 +1,40 @@
+- Attributes
+	- network drive, persist data after termination
+		- detach from EC2 A then attach to EC2 B
+		- using network -> latency
+	- mounted to 1 instance
+	- bound to a **specific AZ** #card
+	  id:: fba8005d-e0f8-4092-af6b-e3b72eb74ad4
+		- To copy data to other AZ, **make a backup (snapshot)** of EBS
+	- likk a "network USB stick" (not a physical)
+	- Free tier: 30 GB of free EBS of type General Purpose (SSD) or Magnetic per month
+	- when creating EC2 instance, check the EBS behavior "delete on termination" -> how to treat EBS volume when instance terminating
+	- **Multi-attach  EBS - io1/io2 family**
+		- deck:: aws
+		- Attach the same EBS volume to multiple EC2 instances in the same AZ #card
+		  id:: 67ce4e3f-eb01-4c05-9721-1de4218663b9
+		- Each instance has **full read & write permissions** to the high-performance volume
+		- Use case:
+			- Achieve higher application availability in clustered Linux applications (ex: Teradata)
+			- Applications must manage concurrent write operations
+		- Up **to 16 EC2 Instances** at a time #card
+		  id:: 67ce4ea0-cb26-40c5-81e5-6c2a095f6b0a
+			- Must use a file system that’s cluster-aware (not XFS, EXT4, etc…)
+- ## Snapshots
+	- EBS snapshot archive
+		- Move a snapshot to an "archive tier" is 75% cheaper
+		- restoring archive: 24-72h
+	- Recycle Bin for snapshot
+		- rules -> retain deleted snapshots -> recoverable
+		- specify retention
+	- Fast Snapshot Restore: lot of money
+	-
+- ## Types
+	- over 32000 IOPS -> io1 or io2
+	- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html
+- ## Encryption
+	- happens transparently
+	- copying an unencrypted snapshot allows encryption option
+	- snapshots of encrypted volumes are encrypted
+	- volume created from encrypted snapshot is encrypted
+	-

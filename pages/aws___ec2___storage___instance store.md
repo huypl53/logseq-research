@@ -1,0 +1,4 @@
+- Attributes
+	- high-performance, EC2 virtual machine's initial storage
+	- ephemeral: loss if EC2 drops
+	- **Backup and replication are manual**

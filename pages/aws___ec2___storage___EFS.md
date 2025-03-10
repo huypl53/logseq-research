@@ -1,0 +1,29 @@
+- > Elastic File System
+- Attributes
+	- deck:: aws
+	- can be mounted on 100s of EC2 across AZ #card
+	  id:: 67ce50d0-7d16-4b52-a6c4-28774a1263c7
+	- works in multi-AZ
+	- high available, scalable, expensive (3x gp2), **pay per use**
+	- compatible **with Linux based AMI** (not Windows)
+	- 1000s of concurrent NFS clients #card
+	  id:: 67ce52b4-132b-4f7e-99d4-6c9f01d5757d
+- Performance Mode (set at EFS creation time)
+	- General Purpose (default) – latency-sensitive use cases (web server, CMS, etc…)
+	- Max I/O – higher latency, throughput, highly parallel (big data, media processing)
+- Throughput Mode
+	- Bursting – 1 TB = 50MiB/s + burst of up to 100MiB/s
+	- Provisioned – set your throughput regardless of storage size, ex: 1 GiB/s for 1 TB storage
+	- Elastic – **automatically scales** throughput up or down based on your workloads
+		- Up to 3GiB/s for reads and 1GiB/s for writes
+		- Used for unpredictable workloads
+- ## Storage Classes
+	- Storage Tiers (lifecycle management feature –move file after N days)
+		- Standard: for **frequently accessed** files
+		- Infrequent access (EFS-IA): cost to retrieve files, **lower price to store.**
+		- Archive: r**arely accessed data** (**few times each year**), 50% cheaper
+		- Implement **lifecycle policies t**o move files between storage tiers
+	- Availability and durability
+		- Standard: Multi-AZ, great for prod
+		- One Zone: One AZ, great for dev, backup enabled by default, compatible with IA (EFS One Zone-IA)
+	- Over 90% in cost savings
