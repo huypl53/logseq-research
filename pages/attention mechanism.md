@@ -1,0 +1,21 @@
+- Research
+	- Keywords
+		-
+	- Intro
+		- Types
+			- self-attention
+			- additive attention
+			- dot-product attention
+			- ![image.png](../assets/image_1741839655022_0.png){:height 152, :width 477}
+			- bi-directional attention: BERT
+	- Contributions
+		- Scaled dot-product attention
+		- Experiments
+			- Metrics
+				- BLEU
+				-
+	- Related works
+	- Vocab
+	- Conclusions
+		- Positional encoding
+		- Resolve RNN's bottleneck of context vector (transition from encoder to decoder)

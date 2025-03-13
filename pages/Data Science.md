@@ -1,3 +1,11 @@
 - [[Moore-Penrose pseudoinverse]]
 - [[Data Science/norm]]
--
+- ## Temporay
+	- product
+		- dot-product -> scalar: $$\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i$$
+		- cross-product (for 3-D vectors): $$\mathbf{a} \times \mathbf{b} = \begin{pmatrix} a_2 b_3 - a_3 b_2 \\ a_3 b_1 - a_1 b_3 \\ a_1 b_2 - a_2 b_1 \end{pmatrix}$$
+		- Element-wise Product (Hadamard) -> same shape tensor: $$\mathbf{a} \odot \mathbf{b} = \begin{pmatrix} a_1 b_1 \\ a_2 b_2 \\ \vdots \\ a_n b_n \end{pmatrix}$$
+		- Outer Product: $$\mathbf{a} \otimes \mathbf{b} = \mathbf{a} \mathbf{b}^T = \begin{pmatrix} a_1 b_1 & a_1 b_2 & \cdots \\ a_2 b_1 & a_2 b_2 & \cdots \\ \vdots & \vdots & \ddots \end{pmatrix}$$
+		- Matrix Product: $$(\mathbf{A} \mathbf{B})_{ij} = \sum_{k} a_{ik} b_{kj}$$
+		- Matrix Hadamard
+		- Matrix **Kronecker Product**: $$\mathbf{A}_{m\times n} \otimes \mathbf{B}_{p\times q} = \mathbf{C}_{mn \times pq}$$

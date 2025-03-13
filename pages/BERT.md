@@ -1,0 +1,3 @@
+- > replace some words in source sentence with `[MASK]` to force model to predict that missing one based on its surrounding context
+- > assign special token e.g: `[CLS]` for classification task
+-
