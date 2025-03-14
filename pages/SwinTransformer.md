@@ -1,0 +1,8 @@
+- Contributions
+	- Window Multi-head Self Attention
+		- the image is divided into non-overlapping windows
+		- self-attention is computed within each window independently
+		- -> This limits computation to local regions, reducing complexity.
+	- Shifted Window Partitioning
+		- In the next layer, the windows are shifted by half the window size
+-
