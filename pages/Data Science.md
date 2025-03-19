@@ -9,3 +9,5 @@
 		- Matrix Product: $$(\mathbf{A} \mathbf{B})_{ij} = \sum_{k} a_{ik} b_{kj}$$
 		- Matrix Hadamard
 		- Matrix **Kronecker Product**: $$\mathbf{A}_{m\times n} \otimes \mathbf{B}_{p\times q} = \mathbf{C}_{mn \times pq}$$
+	- Derivative
+		- The **Jacobian matrix**

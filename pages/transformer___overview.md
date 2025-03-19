@@ -31,9 +31,9 @@
 		- **Sliding Window**: Processing overlapping segments of the input and combining the outputs, which increases computational load but preserves context.
 		- **Hierarchical Models**: First processing smaller chunks to obtain representations, then combining these to capture long-range dependencies.
 		- **Efficient Transformer Architectures**: Developing models that reduce computational complexity, such as:
-		- **Mamba**: Integrates Structured State Space Models (S4) to handle long sequences efficiently.
-		- **Reformer**: Utilizes locality-sensitive hashing and reversible layers to reduce complexity from O(n²) to O(n log n).
-		- **Sparse Transformers**: Employs sparse attention mechanisms to focus on relevant parts of the input, reducing unnecessary computations.
+			- **Mamba**: Integrates Structured State Space Models (S4) to handle long sequences efficiently.
+			- **Reformer**: Utilizes locality-sensitive hashing and reversible layers to reduce complexity from O(n²) to O(n log n).
+			- **Sparse Transformers**: Employs sparse attention mechanisms to focus on relevant parts of the input, reducing unnecessary computations.
 	- why self-attention #card
 		- ![image.png](../assets/image_1741846566304_0.png)
 		- high **complexity per layer** but **Sequential operations** as well as **maximum path length** is low
