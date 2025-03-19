@@ -8,8 +8,8 @@
 	- feature based: scale up student model to **compare intermediate features** between students and teacher
 	- relation based: Relationships between data points. In a model, extract the relationship between its data point using methods like **distance loss** or **cosine loss**
 - Loss function
-	- Kullback–Leibler divergence loss
-	- CE loss
+	- [[Kullback–Leibler divergence loss]]
+	- [[CE loss]]
 - Misc
 	- pruning
 	- quantization

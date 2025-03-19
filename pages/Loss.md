@@ -1,0 +1,2 @@
+- [[CE loss]]
+- [[Kullback–Leibler divergence loss]]
