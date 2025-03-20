@@ -1,0 +1,15 @@
+## Characteristics
+	- **Multi-modal Inputs**: process both images and text, using encoders for each modality to extract meaningful features.
+	- **Joint Representation**: They align visual and textual features in a shared space, allowing for tasks that require understanding both modalities.
+	- **Transformer Architectures**: Most modern VLMs use transformer-based architectures for encoding and decoding multi-modal data
+- ## Applications
+	- **Image Captioning**: Generating descriptive text for images
+	- **Visual Question Answering (VQA)**: Answering questions based on image content
+	- **Text-Guided Image Generation**: Creating images based on textual prompts (e.g., DALL-E)
+	- **Image-Text Matching**: Finding correlations between images and text descriptions
+	- **Object Detection with Text Guidance**: Identifying objects in an image based on textual cues
+- ## Training Strategies
+	- Contrastive Learning: **Aligning image-text pairs** in a shared feature space
+	- PrefixLM: Using images as prefixes in language models for **text generation tasks**
+	- **Cross-Attention Mechanisms**: **Fusing** visual information directly into language model layers
+	- Masked-Language Modeling (MLM) & Image-Text Matching (ITM): **Aligning specific parts of images with text for reasoning tasks**

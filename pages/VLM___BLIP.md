@@ -1,0 +1,4 @@
+- > Bootstrapping Language-Image Pre-training
+- to unify vision-language understanding and **generation tasks**
+	- understanding-based tasks (e.g., image-text retrieval, visual reasoning)
+	- generation-based tasks (e.g., image captioning, visual question answering)
