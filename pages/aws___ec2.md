@@ -7,7 +7,7 @@
 	  id:: 67cdb553-98ba-4df9-9dff-49de709b1d46
 		- They often reflect poor architectural decisions
 		- Instead, use **a random public IP and register a DNS name** to it
-		- use a [[aws/EC2/LB]]
+		- use a [[aws/EC2/ELB]]
 - ## Q&A
 	- deck:: aws
 	- can use an AMI in `us-east-1` to launch an EC2 instance in any AWS region? #card

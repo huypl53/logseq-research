@@ -1,0 +1,47 @@
+- > Elastic Load Balancers
+- Listen on port -> forward to a [[aws/EC2/TG]]
+- Own fixed hostname
+- Integration
+	- EC2, EC2 Auto Scaling Groups, Amazon ECS
+	- AWS Certificate Manager (ACM), CloudWatch
+	- Route 53, AWS WAF, AWS Global Accelerator
+- Types
+  collapsed:: true
+	- deck:: AWS
+	- ALB #card
+		- > Application LB
+		- support HTTP/2 and websocket
+		- route to applications on same machine
+		- route to HTTP application across machines (target groups)
+			- based on URL query param, choose [[aws/EC2/TG]]
+	- NLB
+		- > Network Load Balancer
+		- high-performance, low latency
+		- have 1 static IP per AZ, support Elastic IP
+	- GLB
+		- > Gateway Load Balancer
+		- Deploy, scale, and manage a fleet of 3rd party network virtual appliances in AWS. E.g: firewall, intrusion detection, deep packet inspection system
+		- operates at layer 3 (network layer) - IP packets
+		- use GENEVE protocol on port 6081
+- ## Sticky Sessions
+	- to make same client be able to access same application
+	- work with ALB, NLB
+	- setup at [[aws/EC2/TG]]
+- ## SSL Certificates
+	- SNI (Server Name Indication) in TSL protocol allows browser to specify desired server name
+- deck:: aws
+- Connection draining/deregistration delay #card
+	- a feature of ALB and NLB to allow in-flight requests to be gracefully completed before the in-game instance is fully deregistered
+- ## Listeners
+	- > check the incoming requests and protocol then route the traffic to its rules
+- ## [[Practice]]
+	- ALB
+		- Launch EC2
+			- select SG
+			- launch 2 instances
+		- Create ALB
+			- Create SG
+			- Attach to new [[aws/EC2/TG]] of prev instances
+			- listener -> rule -> add rule
+				- > by default, listener rule have an action to route traffic to TG
+				- Add condition/matched then action: [Forward to TG/redirect/return fixed response]

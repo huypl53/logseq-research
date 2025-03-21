@@ -5,3 +5,24 @@
 - manual config
 - dynamic config
 	- use [[aws/CloudWatch/Alarms]], which trigger action in [[aws/EC2/ASG]] to add/remove unit capacity. Check result in history
+-
+- ## Policy
+	-
+- ## Metrics
+	- CPUUtilization: Average CPU utilization across your instances
+	- RequestCountPerTarget: to make sure the number of requests per EC2 instances is stable
+	- Average Network In / Out (if you’re application is network bound)
+	- Any custom metric (that you push using CloudWatch)
+- ## Scaling cooldown
+	- During cooldown period, ASG will not launch or terminate additional instances
+- ## Launch Template
+	- AMI + Instance Type
+	- EC2 User Data
+	- EBS Volumes
+	- Security Groups
+	- SSH Key Pair
+	- IAM Roles for your EC2 Instances
+	- Network + Subnets Information
+	- Load Balancer Information
+- ## [[Practice]]
+	- Create launch template

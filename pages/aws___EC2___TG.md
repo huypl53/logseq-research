@@ -1,4 +1,8 @@
 - > target group
-- A group contains a lot of [[aws/EC2]]
+- Could be:
+	- A group contains a lot of [[aws/EC2]]
+	- ECS tasks
+	- [[aws/lambda]]
+	- **private** IP addresses
 - LB only works with [[aws/EC2/TG]], [[aws/ec2/TG]] requires [[aws/EC2/ASG]] to add/remove EC2 in TG
 -

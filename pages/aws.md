@@ -14,8 +14,8 @@
 			  
 			  ```
 	- Create [[aws/EC2]] from launch template for testing only
-	- Create [[aws/SG]] for the load balancer [[aws/EC2/LB]] to be able to listen on port 80
-	- Create [[aws/EC2/TG]]. Then attach that [[aws/EC2/TG]] to the current [[aws/EC2/LB]], the load balancer will forward the requests to the [[aws/EC2/TG]]
+	- Create [[aws/SG]] for the load balancer [[aws/EC2/ELB]] to be able to listen on port 80
+	- Create [[aws/EC2/TG]]. Then attach that [[aws/EC2/TG]] to the current [[aws/EC2/ELB]], the load balancer will forward the requests to the [[aws/EC2/TG]]
 	- Create [[aws/EC2/ASG]] with the created Launch Template, attach it to [[aws/EC2/TG]]
 	- {{renderer excalidraw, excalidraw-2025-02-20-21-24-15}}
 - [[aws/IAM]]
