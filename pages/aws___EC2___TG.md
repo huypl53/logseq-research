@@ -1,8 +1,15 @@
 - > target group
+- deck:: aws
+- Pros: traffic routing and health monitoring
 - Could be:
 	- A group contains a lot of [[aws/EC2]]
 	- ECS tasks
 	- [[aws/lambda]]
 	- **private** IP addresses
-- LB only works with [[aws/EC2/TG]], [[aws/ec2/TG]] requires [[aws/EC2/ASG]] to add/remove EC2 in TG
+- Scenarios: #card
+  id:: 67bfb687-6c79-47f0-bbb1-f7c358ff6bb8
+	- **Static Workload**: You have a fixed set of EC2 instances (or other targets) that don’t need automatic scaling. Example: A small app with 2 manually managed EC2 instances.
+	- **Manual Control**: You want to explicitly register/deregister targets (e.g., during testing or for non-EC2 targets like on-premises servers via IP).
+	- **Non-EC2 Targets**: You’re routing traffic to Lambda functions (ALB only), IP addresses, or a mix of resources not managed by an ASG.
+	- **Fine-Grained Routing**: You need multiple TGs for an ALB with rules (e.g., /api to one TG, /web to another), regardless of scaling.
 -

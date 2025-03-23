@@ -1,4 +1,5 @@
 - > Elastic Load Balancers
+- deck:: aws
 - Listen on port -> forward to a [[aws/EC2/TG]]
 - Own fixed hostname
 - Integration
@@ -9,11 +10,14 @@
   collapsed:: true
 	- deck:: AWS
 	- ALB #card
+	  id:: 67dd0fac-03b6-4eb4-8629-6fa946f6733d
 		- > Application LB
 		- support HTTP/2 and websocket
 		- route to applications on same machine
-		- route to HTTP application across machines (target groups)
-			- based on URL query param, choose [[aws/EC2/TG]]
+		- route to HTTP application **across machines** (target groups)
+			- based on URL , hostname, query param, headers
+		- **port mapping feature** redirects to a dynamic port in ECS
+		- be fit for micro services & **container-based** application (e.g: Docker & Amazon ECS)
 	- NLB
 		- > Network Load Balancer
 		- high-performance, low latency
@@ -23,25 +27,48 @@
 		- Deploy, scale, and manage a fleet of 3rd party network virtual appliances in AWS. E.g: firewall, intrusion detection, deep packet inspection system
 		- operates at layer 3 (network layer) - IP packets
 		- use GENEVE protocol on port 6081
-- ## Sticky Sessions
+- ## Sticky Sessions #card
+  id:: 67dd1e53-38a6-4d5b-9cf1-4d074745950c
 	- to make same client be able to access same application
 	- work with ALB, NLB
 	- setup at [[aws/EC2/TG]]
 - ## SSL Certificates
 	- SNI (Server Name Indication) in TSL protocol allows browser to specify desired server name
-- deck:: aws
-- Connection draining/deregistration delay #card
-	- a feature of ALB and NLB to allow in-flight requests to be gracefully completed before the in-game instance is fully deregistered
+- ## Connection draining/deregistration delay #card
+  id:: 67dd280f-449f-43dc-9c83-6a1c67a5ef71
+	- a feature of ALB and NLB to allow **in-flight requests to be gracefully completed** before the in-game instance is fully deregistered
+- ## Cross-Zone load balancing
+	- free for ALB; must charges for NLB & GLB
 - ## Listeners
 	- > check the incoming requests and protocol then route the traffic to its rules
 - ## [[Practice]]
-	- ALB
+	- ALB with TG only
+	  collapsed:: true
 		- Launch EC2
 			- select SG
-			- launch 2 instances
+			- launch 2 instances; check their distinguish internal IPs
+		- Create new TG
+			- Registers targets: created EC2
+			- in `Attribute`, check `stickiness`
 		- Create ALB
-			- Create SG
+			- **Create SG** in ALB to allow 80 on HTTP
 			- Attach to new [[aws/EC2/TG]] of prev instances
 			- listener -> rule -> add rule
 				- > by default, listener rule have an action to route traffic to TG
 				- Add condition/matched then action: [Forward to TG/redirect/return fixed response]
+				- e.g: return error to route `example.com/error`
+	- ALB with ASG only
+		- Terminate all running instances attached to ELB
+		- Create new ASG with desire capacity ->  AWS auto create new instances
+	- ALB with TG + ASG
+- ## Review
+	- Seamlessly handle failures of downstream instances #card
+	  id:: 67df5a03-25fc-42e9-9503-b70aa1105c16
+		- [[aws/EC2/TG]]: LB check health (on port or route /health) of TG's instances to choose which to route traffic
+		- [[aws/EC2/ASG]]: [[aws/CloudWatch/Alarms]] trigger -> ASG add/remove instances
+		- Do regular health checks to your instances
+		- Provide SSL termination (HTTPS) for your websites
+		- Enforce stickiness with cookies (route user request to same instance)
+		- High availability across zones (with ASG only)
+		- Separate public traffic from private traffic
+	-

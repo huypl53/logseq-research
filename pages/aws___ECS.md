@@ -1,0 +1,4 @@
+- > Elastic Container Service
+- Task: An instance of task definition running on an ECS cluster
+	- Task definition: a JSON specifying: container image, resource allocation, port, environment, network setting
+- Cluster: a logical grouping of compute resources (EC2 instances or [[Fargate]] )
