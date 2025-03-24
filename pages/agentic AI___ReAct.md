@@ -1,0 +1,4 @@
+- > combines reasoning with action-taking
+	- **Reasoning**: Thinking about the problem and planning what to do next.
+	- **Acting**: Taking concrete steps, such as querying a database, searching the web, or calling a function, based on its reasoning.
+-

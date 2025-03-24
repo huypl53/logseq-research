@@ -1,0 +1,2 @@
+- > AI break a complex task to a series of intermediate steps or thoughts to arrive at a final answer
+- e.g: Generally LLM often wrongly indicate that 9.11 > 9.9 due to 11 > 9 because it retrieve trained knowledge. With CoT, LLM break the comparison problem into tasks which compare 0.11 vs 0.90 first

@@ -12,6 +12,7 @@
 	- **Cost Efficiency**: You want to scale down instances during low demand to save costs, while ensuring ELB only sends traffic to active instances.
 	- **Simplified Management**: You prefer automated instance lifecycle (launch, terminate) tied to ELB health checks.
 - ## Policy #card #incremental
+  id:: 67dd2ebd-4dc9-4053-ac3c-8ad3a81215bb
 	- Dynamic Scaling:
 		- Target tracking scaling: e.g:  I want the average ASG CPU to stay at around 40%
 		- Simple/Step Scaling: [[aws/CloudWatch]] alarm trigger
