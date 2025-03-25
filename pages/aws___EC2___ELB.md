@@ -7,7 +7,6 @@
 	- AWS Certificate Manager (ACM), CloudWatch
 	- Route 53, AWS WAF, AWS Global Accelerator
 - Types
-  collapsed:: true
 	- deck:: AWS
 	- ALB #card
 	  id:: 67dd0fac-03b6-4eb4-8629-6fa946f6733d

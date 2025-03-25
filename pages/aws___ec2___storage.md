@@ -2,4 +2,3 @@
 	- "limited" performance
 - [[aws/ec2/storage/instance store]]
 - [[aws/ec2/storage/EFS]]
--
