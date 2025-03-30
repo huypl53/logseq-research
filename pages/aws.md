@@ -32,7 +32,71 @@
 		  id:: 67b97e15-ef4a-401e-94de-1cd14ec5db7c
 			- ((67b96665-2d3f-463c-b4cd-4b9c1c50589a))
 			-
--
+- ## To-learn
+	- LATER Access Control;
+	  logseq.order-list-type:: number
+	- LATER Amazon CloudFront;
+	  logseq.order-list-type:: number
+	- LATER Amazon CloudWatch;
+	  logseq.order-list-type:: number
+	- LATER Amazon DynamoDB;
+	  logseq.order-list-type:: number
+	- LATER Amazon Elastic Block Store (Amazon EBS);
+	  logseq.order-list-type:: number
+	- LATER Amazon Elastic Compute Cloud (Amazon EC2);
+	  logseq.order-list-type:: number
+	- LATER Amazon Elastic MapReduce (Amazon EMR);
+	  logseq.order-list-type:: number
+	- LATER Amazon Redshift;
+	  logseq.order-list-type:: number
+	- LATER Amazon Relational Database Service (Amazon RDS);
+	  logseq.order-list-type:: number
+	- LATER Amazon Resource Names (ARN);
+	  logseq.order-list-type:: number
+	- LATER Amazon Route 53;
+	  logseq.order-list-type:: number
+	- LATER Amazon Simple Storage Service (Amazon S3);
+	  logseq.order-list-type:: number
+	- LATER Amazon Simple Queue Service (Amazon SQS);
+	  logseq.order-list-type:: number
+	- LATER Authentication & Authorization;
+	  logseq.order-list-type:: number
+	- DONE Availability Zones;
+	  logseq.order-list-type:: number
+	- LATER AWS CloudFormation;
+	  logseq.order-list-type:: number
+	- LATER AWS CloudTrail;
+	  logseq.order-list-type:: number
+	- LATER AWS CodeCommit;
+	  logseq.order-list-type:: number
+	- LATER AWS CodeDeploy;
+	  logseq.order-list-type:: number
+	- LATER AWS Direct Connect;
+	  logseq.order-list-type:: number
+	- LATER AWS Identity and Access Management (AWS IAM);
+	  logseq.order-list-type:: number
+	- LATER AWS Key Management Service (AWS KMS);
+	  logseq.order-list-type:: number
+	- LATER AWS Storage Gateway;
+	  logseq.order-list-type:: number
+	- LATER Cloud Concepts;
+	  logseq.order-list-type:: number
+	- LATER Compliancy, Governance, Identity & Privacy;
+	  logseq.order-list-type:: number
+	- DONE Elastic IP (EIP);
+	  logseq.order-list-type:: number
+	- LATER Inbound Data Traffic & Outbound Data Traffic;
+	  logseq.order-list-type:: number
+	- LATER Input/Output operations Per Second (IOPS)
+	  logseq.order-list-type:: number
+	- LATER Public & Private Cloud;
+	  logseq.order-list-type:: number
+	- LATER Service Level Agreement (SLA);
+	  logseq.order-list-type:: number
+	- LATER Software as a Service (SaaS);
+	  logseq.order-list-type:: number
+	- DONE Virtual Private Clouds (VPC);
+	  logseq.order-list-type:: number
 - ## Q&A
   collapsed:: true
 	- Solution Architect Associate Certification SAA-C03
