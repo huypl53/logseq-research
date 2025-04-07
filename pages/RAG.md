@@ -1,0 +1,13 @@
+- Components
+	- Indexing
+		- Load
+			- Document, web page
+		- Split, chunk
+		- Store
+			- Embedding
+			- Vector store
+	- Retrieval
+		- Query anallysis
+		- Information retrieval
+	- Generation
+-

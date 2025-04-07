@@ -1,4 +1,5 @@
 - Miscs
+  collapsed:: true
 	- collaboration mechanisms
 		- actors
 		- types (cooperation, competition, coopetition), structures, strategies, and coordination protocols
@@ -9,17 +10,52 @@
 		- Artificial collective intelligence
 - Keywords
 	- [[human-in-the-loop]]
-	-
-- Intro
-- Related works
-- Contributions
-- Experiment
-- Review
-	- Pros
-	- Cons
 - ## Frameworks
 	- [[langgraph]]
 	- [[swarm]]
 	- [[crewAI]]
+	- [[openAI]]
+- ## Characteristics
+	- Deterministic
+		- the output or behavior is entirely **predictable based on the input** and **the rules** governing the system
+		- A deterministic AI agent will always produce the same output when given the same input, with **no randomness or variability involved**.
+		- Usecases:
+			- consistency and predictability are critical
+			- rule-based systems
+			-
 - ## LLM
 	- [[gemini]]
+- ## Examples
+	- CSV Agent
+-
+- ## Workflows
+	- Prompt chaining
+		- Prompt chaining **decomposes a task** into a sequence of steps
+		- Each LLM call processes the output of the previous
+		- **Optional checks** on intermediate steps to ensure the process is still on track
+		- Usecases:
+			- generate outline of document -> check if the outline meets certain criteria -> write the document based on the outline
+	- Routing
+		- **Classifies an input and directs it** to specialized followup task
+		- Usecases:
+			- Routing easy/common questions to smaller models like Claude 3.5 Haiku 
+			  and hard/unusual questions to more capable models like Claude 3.5 Sonnet
+			   to optimize cost and speed.
+	- Parallelization
+		- LLMs can **work simultaneously** on a task and have their **outputs aggregated** programmatically.
+		- Variations:
+			- **Sectioning**: Breaking a task into independent subtasks run in parallel.
+			- **Voting:** Running the same task multiple times to get diverse outputs.
+	- Orchestrator-workers
+		- central LLM **dynamically breaks down tasks**, **delegates them to worker LLMs**, and **synthesizes** their results.
+		- Usecases:
+			- you can't predict the **subtasks needed**, which is determined by the orchestrator based on the specific input
+			- Coding products that make complex changes to multiple files each time.
+	- Evaluator-optimizer
+		- one LLM call generates a response while another provides evaluation and feedback in a loop.
+		- Usecases:
+			- have clear evaluation criteria, and when iterative refinement provides measurable value
+- ## Patterns
+	- Agent as tools
+	- Deterministic
+		-

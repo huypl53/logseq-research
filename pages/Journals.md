@@ -1,0 +1,6 @@
+- in [[python]] logging
+	- by default log is propagated to root logger, which can be got by logging.getLogger() without providing a name
+	- for a custom logger to handle its own log level and log handler, use logger.propagate = False
+- in [[python]] decorator
+	- the simple version of decorator that returns just the wrapper will takeover the decorated function docs, metadata
+	- to address this, use `functools.wraps`

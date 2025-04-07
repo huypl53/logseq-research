@@ -1,0 +1,12 @@
+- Core Features
+	- Agent loop
+	- Handoff
+	- Function tools
+	- Tracing
+	  id:: 67eb5c8a-65f0-46a2-b3d7-ec8d0139b0f4
+- Miscs
+	- `ModelProvider` support
+- API flavors
+	- `OpenAIResponsesModel` (default)
+	- `OpenAIChatCompletionsModel`
+- Examples

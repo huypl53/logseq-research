@@ -1,0 +1,5 @@
+- > Byte pair encoding
+- break words into smaller, meaningful sub-word units
+- be used in modern LLM like GPT, BERT
+- help handle out-of-vocabulary words
+- strike a balance between **word-level and character-level** tokenization
