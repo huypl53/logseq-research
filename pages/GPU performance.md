@@ -1,0 +1,6 @@
+- FLOPS
+	- Floating-Point Operations Per Second
+	- indicates the GPU's ability to perform **floating-point calculations**
+- TOPS
+	- Trillions of Operations Per Second
+	- measures the **overall number of operations**, including both floating-point and integer operations

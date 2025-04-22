@@ -1,0 +1,2 @@
+- > is the **task of converting natural language sentences into meaning representations** such as logical forms or **standard SQL database queries**
+	- which serves as an important component in many NLP systems such as [[Question answering]] and [[Task-oriented dialogue]]

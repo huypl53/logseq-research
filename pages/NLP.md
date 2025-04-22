@@ -1,2 +1,8 @@
 - Open-domain Question Answering (ODQA):Refers to the task of providing answers to questions o**ver a road range of topics,** leveraging **vast corpora of unstructured text** without being restricted to a specific domain.
--
+- ## Problems
+	- ### [[Semantic parsing]]
+	- [[Question Answering]]
+	- [[Task-oriented dialogue]]
+	-
+- ## Review
+	- about 85% of word types in Vietnamese are composed of at least two syllables (Thang et al., 2008)

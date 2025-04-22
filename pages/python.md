@@ -1,6 +1,59 @@
-- library
+- from library
 	- functools
 		- wraps
+			- forward the source function name, metadata to wrapper
 	- logging
 	  id:: 67f38eb3-1f21-4518-9e86-3c629b3b6996
+		- custom logger propagates log to `rootLogger`
+			- to stop propagation, use `logger.propagate=False`
+	- contextlib
+		- Context Manager
+			- defines the runtime
+			- context to be established + `with` statement
+			- handles entry into, exit from, the desired runtime context for execution of the block of code
+			- A custom `Context Manager` object must implement `__enter__` (return [as Target]) and `__exit__` methods
+		- ExitStack/AsyncExitStack
+			- A context manager combines **other context managers and cleanup functions**, especially those that are optional or otherwise driven by input data **dynamically at runtime**
+			- Their `__exit__` methods are called in `a reverse order` even if exceptions occur
+			- Allows registering arbitrary cleanup functions, not just context managers
+- generator
+  collapsed:: true
+	- $.send()
+		- helps a bidirectional communication between caller and generator
+		- caller uses $.send() to pass a value to generator
+		- the passed value inside generator is defined: `sent = yield <something>`
+- asyncio
+  collapsed:: true
+	- event loop
+		- picks the most ready task from the task queue then run the picked task
+		- when the task waits for another, pick the next one to process
+	- awaitable object
+		- an object that implement `__await__()` method, which returns an iterator (typically a generator-like object)
+			- which the event loop uses to **suspend and resume** execution
+		- types of awaitables
+			- **Coroutines**
+				- define by `async def`
+				- must be awaited or scheduled (e.g via `asyncio.run()`)
+				- when using `await`, coroutine yields control back to the event loop, wait for other **coroutine, task or awaitable** to complete
+			- **Futures**: Low-level objects representing a **pending result** (e.g `asyncio.Future`)
+			- **Tasks**: Wrapped coroutines scheduled in an event loop (e.g., created by `asyncio.create_task()`).
+- helpful packages
+	- hydra
+		- Concepts
+			- `defaults` list:
+				- config
+					- specified by the conf file name (*.yml) with[out] extension
+					- config group
+				- `_self_`
+					- determines the relative position of `this` config in the Defaults List
+			- packages
+				- determines where the **content of each input config is placed in the output config**
+				- is derived from `Config Group` by default
+	- uv
+		- package and project mananger
+		- tags:: package, project
+	- hatch
+		- extensible project manager
+		- tags:: project
+		-
 		-

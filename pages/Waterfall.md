@@ -1,0 +1,9 @@
+- Flows
+	- Có 8 công đoạn cơ bản khi áp dụng mô hình Waterfall. Các công đoạn này phải được thực hiện lần lượt. Ví dụ khi đã ở giai đoạn test thì sẽ không thể quay lại công đoạn phân tích dự án.
+	- Conception: Công đoạn này có thể bắt đầu với 1 ý tưởng. Đây là giai đoạn đánh giá ban đầu của dự án: tại sao cần phát triển dự án? lợi ích đem lại là gì? và các ước lượng ban đầu về cost.
+	- Initiation: Khi ý tưởng đã thành hình, bạn cần thuê team dự án, định nghĩa mục tiêu, phạm vị, mục đích và sản phẩm của dự án.
+	- Requirement Gathering and Analysis: Các yêu cầu được tập hợp và phân tích để đánh giá tính khả thi. Tất cả thông tin cần được lưu và tài liệu requirement specification document.
+	- Design: Các thiết kế tạo trong công đoạn này được dùng làm input cho công đoạn coding. Các yêu cầu của dự án cần được study, phân tích và thiết kế xem sẽ xử lý thế nào trong hệ thống. Mục tiêu của team là để hiểu những action cần thực hiện và sản phẩm sẽ có hình dung như thế nào.
+	- Implementation/Coding: Giai đoạn tạo coding, tất cả các nội dung trong công đoạn design cần được chuyển đổi thành ngôn ngữ lập trình.
+	- Testing: Sau khi coding kêt thúc, phần mềm cần được test xem có lỗi không. Sau khi việc test kết thúc, chương trình được chuyển cho khách hàng. Ở 1 số dự án sẽ thực hiện user acceptance testing (UAT) trước khi chương trình được deploy lên môi trường hoạt động thực sự.
+	- Maintenance: Khi khách hàng sử dụng hệ thống, họ có thể tìm thấy những vấn đề chưa ổn. Team phát triển cần thay đổi chương trình để chương trình chạy hiệu quả

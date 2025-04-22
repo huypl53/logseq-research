@@ -27,8 +27,11 @@
 	- [[gemini]]
 - ## Examples
 	- CSV Agent
+	- Customer Support Agent
+		-
 -
 - ## Workflows
+  collapsed:: true
 	- Prompt chaining
 		- Prompt chaining **decomposes a task** into a sequence of steps
 		- Each LLM call processes the output of the previous

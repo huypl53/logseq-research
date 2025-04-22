@@ -1,0 +1,11 @@
+- Research
+	- Keywords
+		- [[Semantic parsing]]
+	- Intro
+	- Contributions
+		- Evaluate EditSQL, IRNet
+		-
+	- Related works
+	- Vocab
+	- Conclusions
+		-
