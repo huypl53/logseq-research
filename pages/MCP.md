@@ -45,7 +45,7 @@
 	- **Prompts**
 		- > deterministic, scalability, workflow auto
 		- reusable **Interaction patterns/reusable templates** and workflow for users <-> LLMs
-		- client flow: get user question -> fetch server's `prompts` -> fill up the `prompts` -> send to its LLM
+		- **client flow**: get user question -> fetch server's `prompts` -> fill up the `prompts` -> send to its LLM
 		- e.g:
 		  collapsed:: true
 			- ```json
@@ -75,13 +75,29 @@
 			  }
 			  ```
 	- **Tools**
-	- Sampling
-	- Roots
+		- **Usage**: client <-> server <-> tools <-> resources, computations, action taking
+		- **Discovery**: Clients can list available tools through the `tools/list` endpoint
+		- **Invocation**: Tools are called using the `tools/call` endpoint
+		- **Flexibility**: Tools can range from simple calculations to complex API interactions
+	- **Sampling**
+		- > human-in-the-loop: user review/modify `prompt`, LLM completion
+		- **Usage:** servers request completions from LLMs
+		- **Flow:** server sends sampling request -> client review/modify request -> client samples from LLM -> client review LLM completion -> client return result to server
+		- e.g: https://github.com/jlowin/fastmcp?tab=readme-ov-file#llm-sampling
+	- **Roots**
+		- Usage: client informs servers **about relevant resource and location**
+		- e.g:
+			- ```
+			  file:///home/user/projects/myapp
+			  https://api.example.com/v1
+			  ```
 - Connection lifecycle
 	- Initialization
 		- client -> initialize request -> server
+		  id:: 680843a5-b37f-4f53-a933-1f0fb3b8ee43
 		- client <- initialize response <- server
 		- client -> initialized notification -> server
+		  id:: 680843a5-8bf3-4043-8c8a-26095586f27c
 	- Normal message exchange begins
 	- Either party can terminate the connection
 		- Clean shutdown via `close()`
@@ -120,4 +136,6 @@
 		  ```
 	-
 - ## Self-review
-	-
+	- **Server as human-in-the-loop:**
+		- `Sampling` and other features of MCP are designed to be used as part of a HITL system, where user can `reject or modify` how LLMs are used by MCP servers
+-
