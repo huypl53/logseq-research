@@ -147,8 +147,7 @@
 		  @mcp.prompt()
 		  def ask_review(code_snippet: str) -> str:
 		      """Generates a standard code review request."""
-		      return f"Please review the following code snippet for"
-		    "potential bugs and style issues:\n```python\n{code_snippet}\n```"
+		      return f"Please review the following code snippet for potential bugs and style issues:\n```python\n{code_snippet}\n```"
 		  
 		  async def main():
 		      async with stdio_server() as streams:
@@ -193,6 +192,3 @@
 		      await client.ping()
 		  ```
 - ## Self-review
-	- **Server as human-in-the-loop:**
-		- `Sampling` and other features of MCP are designed to be used as part of a HITL system, where user can `reject or modify` how LLMs are used by MCP servers
--

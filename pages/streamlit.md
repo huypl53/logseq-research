@@ -1,0 +1,16 @@
+- streamlit run script.py [-- script args]
+- concepts
+  collapsed:: true
+	- caching
+		- cache data
+			- cache serializable objects
+			- is a function decorator
+		- cache resource
+			- cache unserializable objects
+	- session
+		- reset on tab refresh
+		- like a dict
+	- connection
+		- `st.connection("my_db")`
+			- create file `.streamlit/secrets.toml` having field `[connections.my_db]` to create a database connection
+-

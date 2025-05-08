@@ -16,6 +16,7 @@
 	- [[crewAI]]
 	- [[openAI]]
 - ## Characteristics
+  collapsed:: true
 	- Deterministic
 		- the output or behavior is entirely **predictable based on the input** and **the rules** governing the system
 		- A deterministic AI agent will always produce the same output when given the same input, with **no randomness or variability involved**.
@@ -23,12 +24,9 @@
 			- consistency and predictability are critical
 			- rule-based systems
 			-
-- ## LLM
-	- [[gemini]]
 - ## Examples
 	- CSV Agent
 	- Customer Support Agent
-		-
 -
 - ## Workflows
   collapsed:: true
@@ -59,6 +57,6 @@
 		- Usecases:
 			- have clear evaluation criteria, and when iterative refinement provides measurable value
 - ## Patterns
-	- Agent as tools
-	- Deterministic
-		-
+- ## MAS design tips
+	- **Clear Agent Roles**: Each agent will have a **distinct, non-overlapping responsibility** to avoid redundancy and ensure smooth handoffs.
+	- **Improved Workflow**: A more **linear and adaptive workflow** to handle various user intents (e.g., product inquiries, order placement, personalized recommendations, and sentiment handling).
