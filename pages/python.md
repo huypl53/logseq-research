@@ -20,9 +20,12 @@
 			- Their `__exit__` methods are called in `a reverse order` even if exceptions occur
 			- Allows registering arbitrary cleanup functions, not just context managers
 	- atexit
+	  collapsed:: true
 		- register callback to be run at python app exit
 		- **not regarding app killed by signal not handled by python**
 			- using `system.signal` to catch these cases
+	- tempfile
+		-
 - generator
   collapsed:: true
 	- $.send()

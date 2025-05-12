@@ -8,4 +8,40 @@
 	- Related works
 	- Vocab
 	- Conclusions
-		-
+- ## Workflow
+- chart
+	- {{renderer excalidraw, excalidraw-2025-05-12-08-21-57}}
+	  id:: 68214d2e-64b9-444d-8429-d16186855f23
+- Value retrieval
+	- user question -> extract keywords via LLM few-shot -> retrieve syntactically **similar words** (via LSH)
+- Candidate generator
+	- Generate multiple responses, select one final response
+		- “increase the next token sampling temperature,” ([Pourreza et al., 2024, p. 4](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=4))
+		- “shuffle the order of columns and tables in the prompt” ([Pourreza et al., 2024, p. 4](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=4))
+	- Apply CoT promting
+		- “Divide and Conquer CoT” ([Pourreza et al., 2024, p. 4](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=4))
+			- divide:
+				- decompose task into **sub tasks**
+				- gen partial **sub-queries**
+			- conquer: **assemble** to final query
+			- “is better suited for **decomposing complex questions**” ([Pourreza et al., 2024, p. 4](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=4))
+		- “Query Plan CoT” ([Pourreza et al., 2024, p. 4](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=4))
+			- mock the planning step of DB management: sql query -> query plan (low code for DB engine to execute)
+			- “(1) identifying and locating the relevant **tables for the question**, (2) performing operations such as counting, filtering, or matching between tables, and (3) delivering the final result by selecting the appropriate columns to return” ([Pourreza et al., 2024, p. 4](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=4))
+			- “excels when questions **require more reasoning over the relationships** between different parts of the question and the database schema” ([Pourreza et al., 2024, p. 4](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=4))
+			- “explains which **tables to scan, how to match columns, and how to apply filter**” ([Pourreza et al., 2024, p. 4](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=4))
+		- “Online Synthetic Example Generation” ([Pourreza et al., 2024, p. 5](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=5))
+			- few-shot prompting: user input + SQL sample + DB schemas -> ask LLM to generate several examples
+				- use JOIN
+				- use COUNT
+				- use aggregates
+			- “mixing various examples for various **SQL features and database tables** with and without column filtering is observed to result in better generation quality overall” ([Pourreza et al., 2024, p. 5](zotero://select/library/items/9W7EVZAG)) ([pdf](zotero://open-pdf/library/items/EUBWLQ3H?page=5))
+- Query fixer
+- Selection agent
+	- from generated set of SQL candidates, process pair by pair to update candidate score
+	- in a pair
+		- if same result -> first candidate score +=1
+		- if not
+			- merge their input schemas
+			- use binary classifier to select better candidate
+			- picked candidate score += 1
