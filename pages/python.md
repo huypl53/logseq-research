@@ -25,7 +25,13 @@
 		- **not regarding app killed by signal not handled by python**
 			- using `system.signal` to catch these cases
 	- tempfile
+	  collapsed:: true
 		-
+	- re
+		- `re.search` search for groups matching patterns by orders
+		- Flags
+			- `re.DOTALL` seek **line_break** in `.*` pattern
+			-
 - generator
   collapsed:: true
 	- $.send()
@@ -50,18 +56,48 @@
 - helpful packages
   collapsed:: true
 	- hydra
-	  collapsed:: true
-		- Concepts
+		- Features
+			- **composable** configuration from multiple sources
+			- run **multiple jobs** with different args
+			- logging
+				- hydra log itself
+				- log for executed jobs
+		- Config Concepts
+			- packages
+			  collapsed:: true
+				- determines where the **content of each input config is placed in the output config**
+				- is derived from `Config Group` by default
+			- Config
+			  collapsed:: true
+				- a **yaml file** contains configurations
+					- primary config: config in current file denoted by `_self_`
+					- `Default List`:
+				- can be select by: `config_name` in `@hydra.main`
+			- Config group
+			  collapsed:: true
+				- **a directory** contains multiple config files
 			- `defaults` list:
 				- config
 					- specified by the conf file name (*.yml) with[out] extension
-					- config group
 				- `_self_`
 					- determines the relative position of `this` config in the Defaults List
-			- packages
-				- determines where the **content of each input config is placed in the output config**
-				- is derived from `Config Group` by default
+		- Configuration
+		  collapsed:: true
+			- can be access in `config` as well as **python runtime**
+			- hydra
+				- job
+					- name: job name, default by python filename
+					- chdir:
+				- run: single run
+					- dir: output directory
+				- sweep: multi runs
+					- dir
+				- runtime: should not be overridden
+					- cwd: original working dir the app was executed from
+					- output_dir: dir created by hydra for saving logs and yaml config files
+		-
 	- uv
+	  collapsed:: true
 		- package and project manager
 		- tags:: package, project
 		- Dependencies

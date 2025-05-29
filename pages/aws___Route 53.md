@@ -7,10 +7,14 @@ deck:: aws
 			- Record type
 			- Value: target ip address
 	- test in on aws cloudshell
-		- yum install -y bind-utils
-		- nslookup <created_dns>
-		- dig <created_dns>
-			- return record type
+		- ```bash
+		  yum install -y bind-utils
+		  nslookup <created_dns>
+		  
+		  
+		  dig <created_dns>
+		  #	- return record type
+		  ```
 	- test on an EC2 instance
 		- create **3 new EC2 instances in different AZ**
 		- create an [[aws/EC2/ELB]] ALB
@@ -21,10 +25,14 @@ deck:: aws
 			- assign a public IP of created EC2 to record value
 			- use `dig` command to resolve the TTL timeout
 - ## Record
-	- ?how to route traffic for a domain
+	- ?how to route traffic from a domain to a public IP
 	- Each record contains:
 		- Domain/subdomain Name – e.g., example.com
 		- **Record Type** – e.g., A, AAAA, CNAME, NS, CAA, DS,...
+			- A: IP v4
+			- AAAA: IPv6
+			- CNAME: map a hostname to another hostname
+			- NS: name servers for the Hosted Zone
 		- Value – e.g., 12.34.56.78 (IP address)
 		- Routing Policy – how Route 53 responds to queries
 		- TTL – amount of time the record cached at DNS Resolvers
