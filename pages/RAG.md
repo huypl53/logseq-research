@@ -6,8 +6,26 @@
 		- Store
 			- Embedding
 			- Vector store
+				- frameworks
+					- QDrant
+					- c
 	- Retrieval
 		- Query anallysis
 		- Information retrieval
 	- Generation
--
+- ## Techniques
+	- Re-ranking
+		- when using top-k, not always that the first scored document is the "best-fit", so a re-ranking model come in
+		- models: bge-reranker, jina-reranker
+		- DS: MS MACRO
+	- Context filtering/selection:
+		- TF-IDF, embedding similarity to select top-N parts
+		- use MMR (maximum marginal relavance) to remove duplicated
+	- Multi-query retrieval
+		- generate more queries than just user question
+	- Recursive retrieval
+	- Smart chunking
+	- Chunk size tuning
+	- Metadata filtering
+	- Hybrid search:
+		- searching for **vector** and **keyword**

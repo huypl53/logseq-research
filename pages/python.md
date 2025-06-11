@@ -82,7 +82,6 @@
 				- `_self_`
 					- determines the relative position of `this` config in the Defaults List
 		- Configuration
-		  collapsed:: true
 			- can be access in `config` as well as **python runtime**
 			- hydra
 				- job

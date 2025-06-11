@@ -16,17 +16,16 @@
 	- [[crewAI]]
 	- [[openAI]]
 - ## Characteristics
-  collapsed:: true
 	- Deterministic
 		- the output or behavior is entirely **predictable based on the input** and **the rules** governing the system
 		- A deterministic AI agent will always produce the same output when given the same input, with **no randomness or variability involved**.
 		- Usecases:
 			- consistency and predictability are critical
 			- rule-based systems
-			-
-- ## Examples
-	- CSV Agent
-	- Customer Support Agent
+	- ### Control vs freedom
+		- When designing AI applications, you face a fundamental trade-off between **control** and **freedom**:
+			- **Freedom** gives your LLM more room to be creative and tackle unexpected problems. i.e: [[smolagent]]
+			- **Control** allows you to ensure predictable behavior and maintain guardrails. i.e: [[langgraph]]
 -
 - ## Workflows
   collapsed:: true
@@ -58,5 +57,10 @@
 			- have clear evaluation criteria, and when iterative refinement provides measurable value
 - ## Patterns
 - ## MAS design tips
+  collapsed:: true
 	- **Clear Agent Roles**: Each agent will have a **distinct, non-overlapping responsibility** to avoid redundancy and ensure smooth handoffs.
 	- **Improved Workflow**: A more **linear and adaptive workflow** to handle various user intents (e.g., product inquiries, order placement, personalized recommendations, and sentiment handling).
+- ## Diary
+	- Control vs freedom
+		- Agents can be **free** to ReAct, call tools, plan... like [[smolagent]]
+		- or can be **controlled explicitly** like [[langgraph]]

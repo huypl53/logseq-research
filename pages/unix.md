@@ -1,4 +1,5 @@
 ## Commands
+collapsed:: true
 	- Administration
 		- `usermod`: modify user
 			- `useradd -m <new_username>`: create new user + create its home dir
@@ -6,3 +7,78 @@
 			- `usermod -aG <group_name> <username>`: add user to group without leaving its current groups
 			- `su - <username`: switch to user
 			-
+- ## Rice
+	- For inspection
+		- `echo "DE: ${XDG_CURRENT_DESKTOP:-N/A} | Session: ${DESKTOP_SESSION:-N/A} | Display Server: ${XDG_SESSION_TYPE:-N/A} | WM: $(xprop -root _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}' | xargs -I{} xprop -id {} _NET_WM_NAME 2>/dev/null | grep "WM_NAME" | cut -d'"' -f2 || echo "N/A")"`
+	- Desktop environment (DE)
+	  collapsed:: true
+		- a complete, integrated suite of graphical tools and applications for user interaction
+		- includes: window manager (WM), compositor, file manager, taskbar, Application launcher, system tray
+		- e.g:
+			- GNOME:
+				- default in Ubuntu
+				- resource-intensive
+			- KDE plasma:
+				- highly customizable, appealing, built-in tools
+			- XFCE:
+				- light weights, modular
+				- great for old hardware
+			- LXQt:
+				- lighweight
+		-
+	- Window manager (WM)
+	  collapsed:: true
+		- controls the **placement, appearance, behavior** of application windows
+		- be often core **component of DE** but can also be used **standalone for a minimal setup**
+		- abilities:
+			- resizing, moving, minimizing, maximizing windows
+			- determine whether windows are **stacking/floating** (overlapping, like windows) or **titling** (arranged without overlap)
+		- e.g:
+			- **Stacking/Floating:** Openbox,
+			- **Titling**: i3, bspwm
+			- **Dynamic**: hyprland, sway
+	- Display server
+	  collapsed:: true
+		- display server protocol defines how a graphical interface communicates between the OS, applications and hardware (monitor, keyboard, mouse..)
+		- e.g:
+			- x11
+				- old, apps could snoop on others
+			- wayland
+				- more secure, preventing them from accessing each other’s data
+				- Smoother animations and better handling of high-resolution displays.
+				- the display server, window manager, and compositor (which handles window effects like transparency) are combined into a single program called a Wayland compositor (e.g., Sway, Hyprland, Mutter for GNOME).
+	- Compositor
+	  collapsed:: true
+		- combines the roles of a display server, window manager, and compositor, running on the Wayland protocol
+		- e.g:
+			- Hyprland:
+				- **Dynamic Tiling**
+				- Highly customizable via ~/.config/hypr/hyprland.conf. You can set keybindings, window rules, and visual styles.
+				- Dependencies: Requires tools like swayidle and swaylock for **idle management and screen locking.**
+			- sway:
+				- a **tiling** Wayland compositor as a drop-in replacement for the i3 window manager (which runs on X11)
+	- Display manager
+	  collapsed:: true
+		- as a bridge between boot process and the user's graphical session
+		- features:
+			- log in to system
+			- choose DE or WM
+			- start Xorg/Wayland session
+		- e.g:
+			- sddm for hyprland
+		- Usage:
+			- Op1: enable sddm servier (`systemctl enable sddm`) then select Hyprland session
+			- Op2: start sddm manually from a TTY
+- ## To-make-it-run
+	- audio
+		- audio server
+			- PulseAudio
+				- pavucontrol: GUI version
+			- pipewire-pulse
+				- recommended for hyprland/wayland
+				- emulates PulseAudio
+				- tools:
+					- `pactl list cards`
+					-
+		- alsa
+			- `aplay -l`

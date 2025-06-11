@@ -1,0 +1,3 @@
+- $$h = W_0 x + \delta Wx = W_0 x + BAx; B \in \mathbb{R}^{d\times r}, A \in \mathbb{R}^{r \times k}$$
+- **add modification** to pretrained weights
+- train that **modification part**, freeze the pretrained weights
