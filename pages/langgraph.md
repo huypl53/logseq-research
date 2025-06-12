@@ -3,10 +3,14 @@
 	- persistent
 	- human-in-the-loop
 - ## Components
-  collapsed:: true
 	- **Nodes**: agent, LLM call, tool, decision making (if-else)
 	- **edges**: connect nodes
 		- Conditional edges: decisions
+			- destination nodes must be annotated in func definition
+			- can **route to multiple nodes**
+				- *the point is the returned results is sequence*
+		- **Send**
+			- there can be cases where the **exact edges are not known ahead of time** and/or you may want **different versions of `State`** to exist at the same time
 	- **State**:
 		- be passed between nodes during execution
 - ## Concepts
@@ -39,6 +43,7 @@
 		- ![image.png](../assets/image_1738597478708_0.png)
 - ## Miscs
 - ## Practices
+  collapsed:: true
 	- ### Sub-graph
 		- **state** transfer between parent graph and sub graph
 			- share **state's key** -> include **subgraph as a node** in parent graph

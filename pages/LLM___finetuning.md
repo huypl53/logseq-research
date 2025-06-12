@@ -25,6 +25,7 @@
 		-
 -
 - ## Hyper params
+  collapsed:: true
 	- Learning rate: Dựa nhiều vào kinh nghiệm và thực nghiệm, LR thường được dùng
 	  trong các mô hình ngôn ngữ lớn là 1e-5 hoặc 2e-5.
 	- Number of Epochs: Phụ thuộc vào learning rate và số lượng tokens:

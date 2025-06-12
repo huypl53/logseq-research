@@ -83,7 +83,7 @@
 				  |------|-----------------------------|------------------------------------|------------------|
 				  | 1    | Supervised Fine-Tuning (SFT) | Day mô hình phân hội cùng con người | Học có giám sát  |
 				  | 2    | Reward Model (RM)           | Day mô hình đánh giá phân hội      | Học tư xếp hạng  |
-				  | 3    | Reinforcement Learning      | Tối ưu phân hội thông qua đánh giá RM | [[PPO]] |
+				  | 3    | Reinforcement Learning      | Tối ưu phân hội thông qua đánh giá RM | [[LLM/PPO]] |
 	- Inference
 		- single-turn inference
 		- multi-turn inference
