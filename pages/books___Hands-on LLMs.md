@@ -1,0 +1,12 @@
+## Intro
+	- Language Representing
+		- Bag-of-words
+			- Word tokenization via space splitting
+				- Struggle with no-space language like chinese
+			- Generate word embedding based on **word frequency**
+			- cons
+				- no semantic relation
+					- e.g: bank in river vs battery bank
+		- Vector embeddings
+			- Init **random weights** for each word in vocab
+			- in every training step,

@@ -11,11 +11,13 @@
 - Keywords
 	- [[human-in-the-loop]]
 - ## Frameworks
+  collapsed:: true
 	- [[langgraph]]
 	- [[swarm]]
 	- [[crewAI]]
 	- [[openAI]]
 - ## Characteristics
+  collapsed:: true
 	- Deterministic
 		- the output or behavior is entirely **predictable based on the input** and **the rules** governing the system
 		- A deterministic AI agent will always produce the same output when given the same input, with **no randomness or variability involved**.
@@ -57,10 +59,44 @@
 			- have clear evaluation criteria, and when iterative refinement provides measurable value
 - ## Patterns
 - ## MAS design tips
-  collapsed:: true
 	- **Clear Agent Roles**: Each agent will have a **distinct, non-overlapping responsibility** to avoid redundancy and ensure smooth handoffs.
 	- **Improved Workflow**: A more **linear and adaptive workflow** to handle various user intents (e.g., product inquiries, order placement, personalized recommendations, and sentiment handling).
+	- ## Strategy
+	  collapsed:: true
+		- Chọn đúng mô hình LLM
+			- Ưu tiên mô hình có khả năng suy luận và phản hồi ổn định. Llama, Claude Opus, Mistral là những lựa chọn mã nguồn mở tốt.
+		- Thiết kế logic hoạt động cho agent
+			- Nó có cần suy nghĩ trước khi trả lời? Có nên lập kế hoạch? Khi nào thì dùng công cụ hỗ trợ?
+		- Viết hướng dẫn vận hành rõ ràng
+		  Định nghĩa:
+		  • Cách phản hồi
+		  • Khi nào dùng công cụ
+		  • Hành vi trong từng tình huống cụ thể
+		- Thêm khả năng ghi nhớ hiệu quả
+			- LLM dễ quên – **dùng cửa sổ trượt, tóm tắt hội thoại**, lưu trữ sở thích dài hạn (công cụ như **MemO, ZepAI** có thể hỗ trợ).
+		- Kết nối công cụ & API
+			- Cho phép truy vấn dữ liệu, gọi CRM, tra cứu giá cổ phiếu...
+		- Giao cho nó một công việc cụ thể
+			- “Phân tích phản hồi & gợi ý cải tiến” thì ổn. “Hãy hữu ích” thì quá mơ hồ.
+		- Mở rộng bằng hệ thống multi-agent
+			- Một agent thu thập, một phân tích, một trình bày. Mỗi agent có vai trò rõ ràng.
 - ## Diary
+  collapsed:: true
 	- Control vs freedom
 		- Agents can be **free** to ReAct, call tools, plan... like [[smolagent]]
 		- or can be **controlled explicitly** like [[langgraph]]
+- ## Prompting
+	- [leaked-prompts](https://github.com/jujumilk3/leaked-system-prompts): learn system prompts
+	-
+- ## Practices*
+	- [ ] [philoagents](https://github.com/neural-maze/philoagents-course): Learn how to build an AI-powered game simulation engine to impersonate popular philosophers.
+	  collapsed:: true
+		- Create AI agents that authentically embody historical philosophers
+		- Master building agentic applications
+		- Architect and implement a production-ready RAG, LLM and LLMOps system from scratch
+		  collapsed:: true
+			-
+			-
+			-
+	-
+-
