@@ -8,6 +8,15 @@
 			- 5G/6G networks
 			- natural network generation
 		- Artificial collective intelligence
+	- Elements
+		- Role-playing
+		- Focus
+			- **long-context, lot of tools, unclear target** can result in hallunication
+			- -> **break big task** into **smaller ones** and **assign them for expertise agents**
+		- Tools
+		- Cooperation
+		- Guardrails
+		- Memory
 - Keywords
 	- [[human-in-the-loop]]
 - ## Frameworks
@@ -16,6 +25,7 @@
 	- [[swarm]]
 	- [[crewAI]]
 	- [[openAI]]
+	- [[autogen]]
 - ## Characteristics
   collapsed:: true
 	- Deterministic
@@ -58,6 +68,8 @@
 		- Usecases:
 			- have clear evaluation criteria, and when iterative refinement provides measurable value
 - ## Patterns
+	- **Reflection**:
+		- a multi-agent design pattern where a **critic agent evaluates the responses of a primary agent**
 - ## MAS design tips
 	- **Clear Agent Roles**: Each agent will have a **distinct, non-overlapping responsibility** to avoid redundancy and ensure smooth handoffs.
 	- **Improved Workflow**: A more **linear and adaptive workflow** to handle various user intents (e.g., product inquiries, order placement, personalized recommendations, and sentiment handling).

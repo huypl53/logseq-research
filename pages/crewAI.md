@@ -1,5 +1,6 @@
 - fields: agents, tasks, process, manager <agent/llm>
 - flow
+  collapsed:: true
 	- crew.kickoff()
 		- loop crew.agents
 			- agents.create_executor()
@@ -22,3 +23,33 @@
 											- loop _process_feedback_iteration() stop when no user input
 												- agent_executor.invoke_loop()
 						- insert result to task_outputs
+- ## Components
+	- Role-playing
+	- ### agents
+		- role
+			- for role-based multi agent system
+		- goal
+			- task for agent
+		- backstory
+			- instruction prompt
+				- what agent must do
+				- what is the flow
+				- how to handoff
+	- ### task
+		- description
+			- step-by-step what to do
+		- expected_output
+		- agent
+			- agent assigned to task
+	- ### crew
+		-
+	- tools
+	- guard rails
+	- memory
+	- collaboration
+		- sequential
+		- hierarchical
+		- asynchronous
+- ## Example
+	- ### Agent is able to tailor resume to JD
+	- ### Multi-agent: tech job, researcher, personal profile, resume strategist, interviewer preparer

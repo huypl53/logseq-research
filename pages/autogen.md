@@ -1,0 +1,16 @@
+## Teams
+	- **RoundRobinGroupChat**: A team that runs a group chat with participants taking turns in a round-robin fashion (covered on this page).
+		- Workflow:
+			- Each agent, during its turn, broadcast its response to all other agents
+		- Terminate condition:
+			- critic agent return TERMINATE string
+			- external condition: like asyncio timeout
+		- State:
+			-
+	- **SelectorGroupChat**: A team that selects the next speaker using a ChatCompletion model after each message.
+		- Terminate condition:
+			- Planning agent
+	- MagenticOneGroupChat: A generalist multi-agent system for solving open-ended web and file-based tasks across a variety of domains.
+	- Swarm: A team that uses HandoffMessage to signal transitions between agents. Tutorial
+- ## Review
+	- memory management is abstract, handled by framework implicitly
