@@ -8,6 +8,7 @@ collapsed:: true
 			- `su - <username`: switch to user
 			-
 - ## Rice
+  collapsed:: true
 	- For inspection
 		- `echo "DE: ${XDG_CURRENT_DESKTOP:-N/A} | Session: ${DESKTOP_SESSION:-N/A} | Display Server: ${XDG_SESSION_TYPE:-N/A} | WM: $(xprop -root _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}' | xargs -I{} xprop -id {} _NET_WM_NAME 2>/dev/null | grep "WM_NAME" | cut -d'"' -f2 || echo "N/A")"`
 	- Desktop environment (DE)
@@ -82,3 +83,6 @@ collapsed:: true
 					-
 		- alsa
 			- `aplay -l`
+- ## To categorize
+	- `sudo pacman -Sy archlinux-keyring`
+	-
