@@ -1,4 +1,5 @@
 - from library
+  collapsed:: true
 	- functools
 	  collapsed:: true
 		- wraps
@@ -28,6 +29,7 @@
 	  collapsed:: true
 		-
 	- re
+	  collapsed:: true
 		- `re.search` search for groups matching patterns by orders
 		- Flags
 			- `re.DOTALL` seek **line_break** in `.*` pattern
@@ -54,8 +56,8 @@
 			- **Futures**: Low-level objects representing a **pending result** (e.g `asyncio.Future`)
 			- **Tasks**: Wrapped coroutines scheduled in an event loop (e.g., created by `asyncio.create_task()`).
 - helpful packages
-  collapsed:: true
 	- hydra
+	  collapsed:: true
 		- Features
 			- **composable** configuration from multiple sources
 			- run **multiple jobs** with different args
@@ -126,3 +128,10 @@
 		- tags:: project
 		-
 		-
+	- pytest
+		- `fixture`
+			- context for the tests
+				- environment (for example a database configured with known parameters)
+				- content (such as a dataset).
+			- defined by functions whose names are **ordered arguments** in test functions
+			- services, state, or other operating environments **set up by fixtures** are accessed by test test function **through arguments**
