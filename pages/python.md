@@ -1,5 +1,4 @@
 - from library
-  collapsed:: true
 	- functools
 	  collapsed:: true
 		- wraps
@@ -34,6 +33,31 @@
 		- Flags
 			- `re.DOTALL` seek **line_break** in `.*` pattern
 			-
+	- threading
+		- a program can have multiple threads
+		- each thread run independently
+		- thread.Lock can be used to **sync shared state between thread**
+	- multiprocessing
+		- `Process` class
+			- .start()
+			- .join()
+		- start methods
+			- `spawn`
+				- starts a fresh Python interpreter process
+				- child only inherit **necessary resources**, excluding file descriptors and handles from parent
+			- `fork`
+				- child is identical to parent process
+				  id:: 6875bb38-7b3f-4322-aacf-dea3215337ac
+				- Note that **safely forking a multithreaded** process is problematic.
+			- `forkserer`
+		- Object exchanging
+			- `Queue`
+			- `Pipe`
+		- Synchronization
+			- `Lock`
+		- Pool of workers
+			-
+		-
 - generator
   collapsed:: true
 	- $.send()
@@ -44,8 +68,10 @@
   collapsed:: true
 	- event loop
 		- picks the most ready task from the task queue then run the picked task
-		- when the task waits for another, pick the next one to process
+		- when the **task waits for another**, pick the next one to process
+		- run in **a specific thread**
 	- awaitable object
+	  collapsed:: true
 		- an object that implement `__await__()` method, which returns an iterator (typically a generator-like object)
 			- which the event loop uses to **suspend and resume** execution
 		- types of awaitables
@@ -55,7 +81,15 @@
 				- when using `await`, coroutine yields control back to the event loop, wait for other **coroutine, task or awaitable** to complete
 			- **Futures**: Low-level objects representing a **pending result** (e.g `asyncio.Future`)
 			- **Tasks**: Wrapped coroutines scheduled in an event loop (e.g., created by `asyncio.create_task()`).
+	- tasks
+	- lock
+		- asyncio has its own lock via asyncio.Lock
+			- tasks **sharing same Lock will wait for lock**
+			- tasks in different threads are non-blocking
+			- task **not waiting for Lock can be processed independently** by event loop
+-
 - helpful packages
+  collapsed:: true
 	- hydra
 	  collapsed:: true
 		- Features
