@@ -1,1 +1,14 @@
 - Visual Question Answering (VQA):A task in Machine Learning that aims to answer a question related to a given image.
+- Transformer-based
+- ## Concepts
+	- unified attention:
+		- concatenate image tokens and text tokens
+	- cross-modality attention:
+		- initial input is just text token
+		- at each layer of decoder, encoder's K, V is updated to to make cross attention
+	- ### test time-scaling compute performance
+		- Multiple sampling
+		- Longer response
+			- Budget force
+				- force model to **reason** more
+				- When reaching <eos> toke, remove it then insert new toke like "wait, redo it" to force LLM continue reasoning

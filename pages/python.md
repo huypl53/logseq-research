@@ -118,6 +118,7 @@
 				- `_self_`
 					- determines the relative position of `this` config in the Defaults List
 		- Configuration
+		  collapsed:: true
 			- can be access in `config` as well as **python runtime**
 			- hydra
 				- job
@@ -162,10 +163,20 @@
 		- tags:: project
 		-
 		-
-	- pytest
-		- `fixture`
-			- context for the tests
-				- environment (for example a database configured with known parameters)
-				- content (such as a dataset).
-			- defined by functions whose names are **ordered arguments** in test functions
-			- services, state, or other operating environments **set up by fixtures** are accessed by test test function **through arguments**
+- Miscs
+	- force writing file to disk
+		- ```python
+		  csvfile.flush()
+		  os.fsync(csvfile.fileno())
+		  ```
+		- ## `csvfile.flush()`
+		  collapsed:: true
+			- This flushes Python's internal buffer to the operating system.
+			  **What happens:** When you write to a file in Python, the data doesn't immediately go to the file on disk. Instead, Python keeps it in an internal memory buffer for performance reasons. The `flush()` method forces Python to send all buffered data to the operating system.
+		- ## `os.fsync(csvfile.fileno())`
+		  collapsed:: true
+			- This forces the operating system to write the data from its buffer to the actual disk.
+			  
+			  **What happens:** Even after `flush()`, the OS might keep the data in its own buffer for performance. The `fsync()` system call forces the OS to actually write the data to the physical storage device.
+		- `csvfile.fileno()` gets the file descriptor (a number that identifies the file to the OS)
+		- `os.fsync()` tells the OS: "write everything for this file to disk RIGHT NOW"
