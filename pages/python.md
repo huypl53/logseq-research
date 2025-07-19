@@ -169,11 +169,11 @@
 		  csvfile.flush()
 		  os.fsync(csvfile.fileno())
 		  ```
-		- ## `csvfile.flush()`
+		- `csvfile.flush()`
 		  collapsed:: true
 			- This flushes Python's internal buffer to the operating system.
 			  **What happens:** When you write to a file in Python, the data doesn't immediately go to the file on disk. Instead, Python keeps it in an internal memory buffer for performance reasons. The `flush()` method forces Python to send all buffered data to the operating system.
-		- ## `os.fsync(csvfile.fileno())`
+		- `os.fsync(csvfile.fileno())`
 		  collapsed:: true
 			- This forces the operating system to write the data from its buffer to the actual disk.
 			  

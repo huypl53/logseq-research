@@ -1,6 +1,7 @@
 - orphan branch
-	- # Git Squash Techniques: Complete History Rewriting
-	- This document explains the advanced git techniques used to squash **entire commit histories into single initial commits** while preserving important content like stashes.
+	- ## Git Squash Techniques: Complete History Rewriting
+	  
+	  This document explains the advanced git techniques used to squash entire commit histories into single initial commits while preserving important content like stashes.
 	- ## Overview
 	- The goal was to take a repository with multiple commits and create a clean history with just one initial commit containing all the project files and changes.
 	- ## Key Concepts
