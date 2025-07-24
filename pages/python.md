@@ -1,4 +1,5 @@
 - from library
+  collapsed:: true
 	- functools
 	  collapsed:: true
 		- wraps
@@ -34,10 +35,35 @@
 			- `re.DOTALL` seek **line_break** in `.*` pattern
 			-
 	- threading
+	  collapsed:: true
 		- a program can have multiple threads
 		- each thread run independently
 		- thread.Lock can be used to **sync shared state between thread**
+	- asyncio
+	  collapsed:: true
+		- event loop
+			- picks the most ready task from the task queue then run the picked task
+			- when the **task waits for another**, pick the next one to process
+			- run in **a specific thread**
+		- awaitable object
+		  collapsed:: true
+			- an object that implement `__await__()` method, which returns an iterator (typically a generator-like object)
+				- which the event loop uses to **suspend and resume** execution
+			- types of awaitables
+				- **Coroutines**
+					- define by `async def`
+					- must be awaited or scheduled (e.g via `asyncio.run()`)
+					- when using `await`, coroutine yields control back to the event loop, wait for other **coroutine, task or awaitable** to complete
+				- **Futures**: Low-level objects representing a **pending result** (e.g `asyncio.Future`)
+				- **Tasks**: Wrapped coroutines scheduled in an event loop (e.g., created by `asyncio.create_task()`).
+		- tasks
+		- lock
+			- asyncio has its own lock via asyncio.Lock
+				- tasks **sharing same Lock will wait for lock**
+				- tasks in different threads are non-blocking
+				- task **not waiting for Lock can be processed independently** by event loop
 	- multiprocessing
+	  collapsed:: true
 		- `Process` class
 			- .start()
 			- .join()
@@ -64,30 +90,21 @@
 		- helps a **bidirectional communication** between caller and generator
 		- caller uses $.send() to pass a value to generator
 		- the passed value inside generator is defined: `sent = yield <something>`
-- asyncio
-  collapsed:: true
-	- event loop
-		- picks the most ready task from the task queue then run the picked task
-		- when the **task waits for another**, pick the next one to process
-		- run in **a specific thread**
-	- awaitable object
-	  collapsed:: true
-		- an object that implement `__await__()` method, which returns an iterator (typically a generator-like object)
-			- which the event loop uses to **suspend and resume** execution
-		- types of awaitables
-			- **Coroutines**
-				- define by `async def`
-				- must be awaited or scheduled (e.g via `asyncio.run()`)
-				- when using `await`, coroutine yields control back to the event loop, wait for other **coroutine, task or awaitable** to complete
-			- **Futures**: Low-level objects representing a **pending result** (e.g `asyncio.Future`)
-			- **Tasks**: Wrapped coroutines scheduled in an event loop (e.g., created by `asyncio.create_task()`).
-	- tasks
-	- lock
-		- asyncio has its own lock via asyncio.Lock
-			- tasks **sharing same Lock will wait for lock**
-			- tasks in different threads are non-blocking
-			- task **not waiting for Lock can be processed independently** by event loop
--
+- patterns
+	- [python-patterns.guide]
+		- The Composition Over Inheritance Principle
+			- ## the subclass explosion
+				- [Problem]: you want to custom a log class, then inherited to FileLog, SocketLog then PatternFilterLog. Do we need a new FilePatternFilterLog??
+				- [Solve]
+					- Adapter approaches
+					  logseq.order-list-type:: number
+						- tags:: duct type
+						- Have FileLog -> FileLikeSyslog which implement `write()` method of file then we can pass it to PatternFilterLog
+						- `FileLikeSyslog` have `write()` method like file class's one ( #[[duck type]] here)
+- convention
+	- `duck typing`
+		- type system concept where the **validity of an object for a particular operation** is determined by the p**resence of necessary methods and attributes**, rather than by i**ts explicit type or class inheritance**
+	-
 - helpful packages
   collapsed:: true
 	- hydra
@@ -164,6 +181,7 @@
 		-
 		-
 - Miscs
+  collapsed:: true
 	- force writing file to disk
 		- ```python
 		  csvfile.flush()
