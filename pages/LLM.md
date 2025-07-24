@@ -1,6 +1,7 @@
 - [[LLM/DPO]]
 - [[ROPE]]
 - ## Pipeline
+  collapsed:: true
 	- Pre-training
 		- Data preparation
 			- crawl data
@@ -94,5 +95,11 @@
 		- tags:: QA
 			- pretraining  phase is to train LLM on which data? why there is SFT (Post training)
 - ## Tools
+  collapsed:: true
 	- [LLM Visualization](https://bbycroft.net/llm)
 	-
+- ## Inference
+	- Self-host:
+		- [[vLLM]]
+	- Cost
+		- [[Prompt caching]]

@@ -1,0 +1,4 @@
+- Methods
+	- Hashing
+	- Cosine similarity
+	-
