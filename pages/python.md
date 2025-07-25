@@ -187,14 +187,37 @@
 		  csvfile.flush()
 		  os.fsync(csvfile.fileno())
 		  ```
-		- ## `csvfile.flush()`
+		- `csvfile.flush()`
 		  collapsed:: true
 			- This flushes Python's internal buffer to the operating system.
 			  **What happens:** When you write to a file in Python, the data doesn't immediately go to the file on disk. Instead, Python keeps it in an internal memory buffer for performance reasons. The `flush()` method forces Python to send all buffered data to the operating system.
-		- ## `os.fsync(csvfile.fileno())`
+		- `os.fsync(csvfile.fileno())`
 		  collapsed:: true
 			- This forces the operating system to write the data from its buffer to the actual disk.
 			  
 			  **What happens:** Even after `flush()`, the OS might keep the data in its own buffer for performance. The `fsync()` system call forces the OS to actually write the data to the physical storage device.
 		- `csvfile.fileno()` gets the file descriptor (a number that identifies the file to the OS)
 		- `os.fsync()` tells the OS: "write everything for this file to disk RIGHT NOW"
+-
+- patterns
+	- [Problems] Subclass explosion
+		- We have a `Logger` class
+		- We implement children for log destination: `SocketLogger`, `SyslogLogger`
+		- Next we want `FilteredLogger` to log over specific patterns
+		- But now should we have `FilterSocketLogger`?? We still respect the fact that each class must serve a concrete function but the children are exploded
+	- `The adapter pattern`
+		- As far as we defined, `Logger` has a `file` stream to write the log
+		- Why don't we just implement destination-target log as `file` -> adaptation here: `SocketLogger` -> `FileLikeSocket` and `SyslogLogger` -> `FileLiekSyslogLogger`: mimic file behavior
+		- tags:: [[duck type]]
+		- Then we pass it to `Logger` and `FilteredLogger`
+	- `The bridge pattern`
+		- mainly have 2 components
+			- outer **abstraction**: object that caller sees
+			- inner **implementation**: be wrapped inside **abstraction**
+		- `Logger` now is **abstraction** and seen by caller
+		- `FileHandler`, `SocketHandler` are hidden **implementation** inside
+- ## Concepts
+	- ## [[duck type]]
+		- if a cat can **quack**, it's a duck
+		-
+-
