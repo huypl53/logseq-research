@@ -26,6 +26,7 @@
 	- [[crewAI]]
 	- [[openAI]]
 	- [[autogen]]
+	  collapsed:: true
 - ## Characteristics
   collapsed:: true
 	- Deterministic
@@ -69,6 +70,7 @@
 			- have clear evaluation criteria, and when iterative refinement provides measurable value
 - ## Patterns
 	- **Reflection**:
+	  collapsed:: true
 		- a multi-agent design pattern where a **critic agent evaluates the responses of a primary agent**
 - ## MAS design tips
 	- **Clear Agent Roles**: Each agent will have a **distinct, non-overlapping responsibility** to avoid redundancy and ensure smooth handoffs.
@@ -93,10 +95,14 @@
 		- Mở rộng bằng hệ thống multi-agent
 			- Một agent thu thập, một phân tích, một trình bày. Mỗi agent có vai trò rõ ràng.
 - ## Diary
-  collapsed:: true
 	- Control vs freedom
 		- Agents can be **free** to ReAct, call tools, plan... like [[smolagent]]
 		- or can be **controlled explicitly** like [[langgraph]]
+		- ### [[crewAI]] Focus on tasks over agents
+			- writing clear **task instructions**
+			- define **detailed input and expected outputs**
+			- add **examples and context to guide execution**
+			- dedicated the remaining time to agent **role, goal and back story**
 - ## Prompting
 	- [leaked-prompts](https://github.com/jujumilk3/leaked-system-prompts): learn system prompts
 	-

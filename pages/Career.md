@@ -1,0 +1,34 @@
+## AI Engineer
+	- Survey
+		- Simplilearn
+			- Foundations
+				- Calculus
+				- Statistic and probability
+				- Discrete mathematics
+				- Linear algebra
+		- Models
+			- API-based
+				- Streaming
+				- batch processing
+				- caching
+				- assistants
+			- Usage
+				- Model training
+				- fine tuning
+				- model routing
+		- Promptings
+			- Chain-of-thoughts
+				- Make LLM **explain its thought process first**
+			- Few-shot examples
+			- Structured outputs
+			- ### Prompt manangement
+		- Context
+			- RAG
+			- Embeddings & semantic search
+		- Orchestration (`MAS`)
+		- Evals, Observability
+		-
+- ## Concepts
+	- ### Context engineering
+		- > Context engineering is designing and building **dynamic systems** like giving LLM **the right info in the right format at the right time** to accomplish a task
+		- > the LLM is the CPU and the **context window** is RAM -Andrej Karpathy-
