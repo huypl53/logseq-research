@@ -24,6 +24,7 @@
 												- agent_executor.invoke_loop()
 						- insert result to task_outputs
 - ## Components
+  collapsed:: true
 	- Role-playing
 	- ### agents
 		- role
@@ -53,3 +54,28 @@
 - ## Example
 	- ### Agent is able to tailor resume to JD
 	- ### Multi-agent: tech job, researcher, personal profile, resume strategist, interviewer preparer
+- ## Learn
+	- Prompt
+		- ### System
+		  collapsed:: true
+			- Structure
+				- Role
+					- Which role should the agent play?
+					- Backstory about that role
+				- Tool introduction
+					- Tool name
+					- Tool argument
+					- Tool description
+				- Output format explaination
+					- Reasoning
+						- Require agent to think first
+							- List action
+							- Action input
+							- Observation (action output)
+					- Final output format
+						- Thought
+						- Final answer
+			- Miscs
+				- Context length: ~500 tokens
+				-
+		- 4449

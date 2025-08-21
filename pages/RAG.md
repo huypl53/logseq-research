@@ -1,4 +1,5 @@
 - Components
+  collapsed:: true
 	- Indexing
 		- Load
 			- Document, web page
