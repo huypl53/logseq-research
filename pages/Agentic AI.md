@@ -95,6 +95,7 @@
 		- Mở rộng bằng hệ thống multi-agent
 			- Một agent thu thập, một phân tích, một trình bày. Mỗi agent có vai trò rõ ràng.
 - ## Diary
+  collapsed:: true
 	- Control vs freedom
 		- Agents can be **free** to ReAct, call tools, plan... like [[smolagent]]
 		- or can be **controlled explicitly** like [[langgraph]]
