@@ -110,7 +110,6 @@
 		- type system concept where the **validity of an object for a particular operation** is determined by the p**resence of necessary methods and attributes**, rather than by i**ts explicit type or class inheritance**
 	-
 - helpful packages
-  collapsed:: true
 	- hydra
 	  collapsed:: true
 		- Features
@@ -184,6 +183,9 @@
 		- tags:: project
 		-
 		-
+	- [[python/pydantic]]
+	-
+	-
 - Miscs
   collapsed:: true
 	- force writing file to disk
@@ -203,6 +205,7 @@
 		- `csvfile.fileno()` gets the file descriptor (a number that identifies the file to the OS)
 		- `os.fsync()` tells the OS: "write everything for this file to disk RIGHT NOW"
 - patterns
+  collapsed:: true
 	- [python-patterns.guide]
 		- [Problems] Subclass explosion
 			- We have a `Logger` class
