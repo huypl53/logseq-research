@@ -1,4 +1,5 @@
 - from library
+  collapsed:: true
 	- functools
 	  collapsed:: true
 		- wraps
@@ -92,6 +93,7 @@
 		- caller uses $.send() to pass a value to generator
 		- the passed value inside generator is defined: `sent = yield <something>`
 - patterns
+  collapsed:: true
 	- [python-patterns.guide]
 		- The Composition Over Inheritance Principle
 			- ## the subclass explosion
@@ -103,6 +105,7 @@
 						- Have FileLog -> FileLikeSyslog which implement `write()` method of file then we can pass it to PatternFilterLog
 						- `FileLikeSyslog` have `write()` method like file class's one ( #[[duck type]] here)
 - convention
+  collapsed:: true
 	- `duck typing`
 		- type system concept where the **validity of an object for a particular operation** is determined by the p**resence of necessary methods and attributes**, rather than by i**ts explicit type or class inheritance**
 	-
@@ -199,8 +202,24 @@
 			  **What happens:** Even after `flush()`, the OS might keep the data in its own buffer for performance. The `fsync()` system call forces the OS to actually write the data to the physical storage device.
 		- `csvfile.fileno()` gets the file descriptor (a number that identifies the file to the OS)
 		- `os.fsync()` tells the OS: "write everything for this file to disk RIGHT NOW"
--
+- ## Concurrency
+	- > Threading is for working in parallel, and async is for waiting in parellel
+	- ---
+	- Multi-threading
+		- Global Interpreter Lock (GIL)
+			- > prevent multiple threads from executing python bytecode at the very same time
+	- Multi-processing
+	- ### `asyncio`
+		- - when you `await` for your current code, other `coroutines` are still executed under **a single thread of execution**
+		- **pros**:
+			- be able to spawn thousands of cheap **tasks** without bogging down the system
+			- be able to cancel tasks or easily wait for multiple ones at once
+	- ### `concurrent.futures` package
+		- a modern interface to `threading` and `multiprocessing`, which provides convenient thread/process pools it call **executor**
+		-
+	-
 - patterns
+  collapsed:: true
 	- [Problems] Subclass explosion
 		- We have a `Logger` class
 		- We implement children for log destination: `SocketLogger`, `SyslogLogger`
