@@ -4,3 +4,7 @@
 	- Swarm
 		- contains list of nodes which are installed in machines, virtual machines, AWS EC2,...
 		- communicate via docker overlay network
+-
+- ## Today
+	- pid:
+	-
