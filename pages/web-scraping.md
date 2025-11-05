@@ -1,0 +1,8 @@
+- **Keywords**
+	- residential proxy pool
+	- IP rotator
+	- IP rotating
+	-
+- ## Experiment
+- If you have replicated the right network request and still getting rate limits. The problem may be that as you have added the cookies into the code for fetching data from that network request, those cookies contain location related data, your timezone and other stuff, so if you try to rotate the proxies, you will again encounter rate limits as your proxy is from a different location and the location set in the cookies is different. Therefore, the tip is to add only the important cookies/headers. Like auth tokens, captcha tokens and other stuff not related to your location and then rotate your IP in a proper way along with good user agents.
+-
