@@ -1,0 +1,2 @@
+- store and manage kafka metadata, broker registration
+- supports leader election, configuration storage, heartbeats

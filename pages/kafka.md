@@ -1,0 +1,15 @@
+## Core components
+	- Topics: logical data stream of logging, payment, ML real time data
+		- a logical stream backed by partition log files inside brokers
+		- Kafka uses a custom binary TCP protocol to move data between producers, brokers, and consumers.
+	- Partitions: a topic is splitted into paritions
+	- Broker: stores partitions
+		- **Appends messages to a log file on disk**.
+		- **Maintains index** files for offset lookups.
+		- Replicates data to follower brokers.
+		- A broker manages all partition data through log files + index files + offsets.
+	- Producers: send message to topics
+	- Consumers: receive partitions data
+	- Offset: position inside a partition
+- ## Flow
+	- kafka receive message of a topic, split them into partition then send to brokers. To save the partition distribution over brokers, kafka store those information in **cluster metadata**
