@@ -105,3 +105,6 @@
 		- [[Prompt caching]]
 - ## Performance
 	- TTFT: time to first token
+- ## Evaluation
+	- [[ELO]] algorithm
+	-

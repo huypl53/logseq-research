@@ -89,8 +89,14 @@
 			- pick from tokens whose cumulative probability is below some threshold
 		- Repetition penalty
 			- Reduce probability of picking seen token
+	- Hallucination mitigation
+		- Citation Generation
+			- Instruct LLM to cite resources after each sentence
+- ## Evaluation strategies
+	-
 - ## Framework
 	- Retrieval
 		- Weaviate
 			- support hybrid search: HNSW + BM25
+-
 -
