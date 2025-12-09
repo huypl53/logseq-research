@@ -99,4 +99,7 @@
 		- Weaviate
 			- support hybrid search: HNSW + BM25
 -
--
+- ## Helpful repos
+	- Practices
+		- https://github.com/NirDiamant/RAG_Techniques
+		-

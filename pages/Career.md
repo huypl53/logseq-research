@@ -1,5 +1,6 @@
-## AI Engineer
+## [[AI Engineer]]
 	- Survey
+	  collapsed:: true
 		- Simplilearn
 			- Foundations
 				- Calculus
