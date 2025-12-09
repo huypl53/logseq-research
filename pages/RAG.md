@@ -43,35 +43,54 @@
 		- Negative: opposite direction
 		- 0: perpendicular
 		- positive: same direction
-- ## Searching algorithms
-	- Approximate nearest neighbors algorithms
-	- ### Navigable Small World
-		- Compute distances between all document vectors
-		- Add one node to the graph for each document
-		- Connect each node to its nearest neighbors
-		- Can traverse the graph moving along edges between neighboring documents
-		- May not find closest possible vectors, algorithm doesn’t pick optimal
-		  overall path, **just best path in each moment**
-	- **Hierarchical Navigable Small World (HNSW)**
-		- speed up early parts of the search
-		- Relies on a hierarchical proximity graph
-		- At each layer of reduction, build a **new proximity graph** of intermediate navigation
-- ## Chunking
-	- fixed size chunking
-	- overlap chunking
-	- **Semantic chunking**
-		- Embedding whole document sentence by sentence (or paragraph)
-		- Group adjacent sentence/paragraphs by similarity
-- ## Query parsing
-	- Query Rewriting
-	- Named Entity Recognition
-	- Hypothetical Document Embeddings (HyDE)
-		- Uses generated “hypothetical documents” that would be ideal search results to help with the search process
-		- HyDE means the retriever is matching documents to
-		  documents, one is the “perfect” hypothetical one generated
-		  from the prom
+- ## Retrieval
+	- ### Searching algorithms
+	  collapsed:: true
+		- Approximate nearest neighbors algorithms
+		- ### Navigable Small World
+			- Compute distances between all document vectors
+			- Add one node to the graph for each document
+			- Connect each node to its nearest neighbors
+			- Can traverse the graph moving along edges between neighboring documents
+			- May not find closest possible vectors, algorithm doesn’t pick optimal
+			  overall path, **just best path in each moment**
+		- **Hierarchical Navigable Small World (HNSW)**
+			- speed up early parts of the search
+			- Relies on a hierarchical proximity graph
+			- At each layer of reduction, build a **new proximity graph** of intermediate navigation
+	- ### Chunking
+	  collapsed:: true
+		- fixed size chunking
+		- overlap chunking
+		- **Semantic chunking**
+			- Embedding whole document sentence by sentence (or paragraph)
+			- Group adjacent sentence/paragraphs by similarity
+	- ### Query parsing
+		- Query Rewriting
+		- Named Entity Recognition
+		- Hypothetical Document Embeddings (HyDE)
+			- Uses **generated “hypothetical documents”** that would be ideal search results to help with the search process
+			- HyDE means the retriever is matching documents to
+			  documents, one is the “perfect” hypothetical one generated
+			  from the prom
+	- ### Reranking
+		- Reranking engine
+			- [[Cross encoder]] rerankers
+				- give better results than [[bi-encoder]] but **are slow**
+				- Using cross-encoders **only after initial bi-encoder filtering** makes the quality-time tradeoff feasible.
+			- LLM scoring
+- ## Generation
+	- Sampling strategies
+		- Temparature
+			- Shape the next token distribution by adding temperature to divisor
+		- Top-K
+			- Pick only from K most likely tokens, ignore rest
+		- Top-P
+			- pick from tokens whose cumulative probability is below some threshold
+		- Repetition penalty
+			- Reduce probability of picking seen token
 - ## Framework
 	- Retrieval
 		- Weaviate
 			- support hybrid search: HNSW + BM25
-	-
+-

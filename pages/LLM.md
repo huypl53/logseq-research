@@ -103,3 +103,5 @@
 		- [[vLLM]]
 	- Cost
 		- [[Prompt caching]]
+- ## Performance
+	- TTFT: time to first token
