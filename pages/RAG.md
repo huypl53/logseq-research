@@ -80,6 +80,7 @@
 				- Using cross-encoders **only after initial bi-encoder filtering** makes the quality-time tradeoff feasible.
 			- LLM scoring
 - ## Generation
+  collapsed:: true
 	- Sampling strategies
 		- Temparature
 			- Shape the next token distribution by adding temperature to divisor
@@ -93,8 +94,20 @@
 		- Citation Generation
 			- Instruct LLM to cite resources after each sentence
 - ## Evaluation strategies
-	-
+	- ### Triad
+		- Context relevance
+			- Are **retrieved docs** relevant to query
+			- Typical sub-metrics:
+				- **Recall@K** – Are relevant passages included in the top-K retrieved?
+				- **Precision@K** – Are retrieved passages actually relevant?
+				- **MMR / Diversity** – Does retrieval avoid redundancy?
+				- **Retrieval Coverage** – How much of the answer-supporting evidence is captured?
+		- Groundedness/Faithfulness
+			- Is the answer supported by the context
+		- Answer relevance
+			- Does the answer directly address the query
 - ## Framework
+  collapsed:: true
 	- Retrieval
 		- Weaviate
 			- support hybrid search: HNSW + BM25

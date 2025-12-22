@@ -421,4 +421,5 @@
  :file/name-format :triple-lowbar
  :graph/settings {:journal? true
  :builtin-pages? true}
- :feature/enable-flashcards? false}
+ :feature/enable-flashcards? false
+ :ui/show-brackets? false}
