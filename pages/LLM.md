@@ -101,10 +101,24 @@
 - ## Inference
 	- Self-host:
 		- [[vLLM]]
+		- [[TGI]]
 	- Cost
 		- [[Prompt caching]]
 - ## Performance
 	- TTFT: time to first token
 - ## Evaluation
 	- [[ELO]] algorithm
+- ## Disadvantages
+	- Performance
+		- Slow Decoding
+			- in autoregressive decoding, **store KV vector of seen tokens**, use them to generate next token
+- ## Techniques
+	- [[PagedAttention]]
+	- [[FlashAttention]]
+	- [[KV compression]]
+	- [[LLM/quantization]]
+	- [[LLM/Sliding windows]]
 	-
+- ## Keywords
+	- Attention kernel
+-

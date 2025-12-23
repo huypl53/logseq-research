@@ -1,0 +1,6 @@
+- Instead of allocating **contiguous memory** for the short input with max_seq_len like basic KV cache, it store **virtual paging table**
+-
+- ## Advantages
+	- **Parallel sampling*
+		- Multiple output sequences are generated from same prompt
+		-
