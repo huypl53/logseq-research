@@ -102,8 +102,13 @@
 	- Self-host:
 		- [[vLLM]]
 		- [[TGI]]
+		- [[TRT-LLM]]
+		- [[sglang]]
 	- Cost
 		- [[Prompt caching]]
+	- Optimization
+		- [[PagedAttention]]
+		- [[FlashAttention]]
 - ## Performance
 	- TTFT: time to first token
 - ## Evaluation
