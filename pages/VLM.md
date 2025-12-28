@@ -13,3 +13,13 @@
 	- PrefixLM: Using images as prefixes in language models for **text generation tasks**
 	- **Cross-Attention Mechanisms**: **Fusing** visual information directly into language model layers
 	- Masked-Language Modeling (MLM) & Image-Text Matching (ITM): **Aligning specific parts of images with text for reasoning tasks**
+- ## Model
+	- Qwen/Qwen2.5-VL-7B-Instruct
+	- Qwen/Qwen2.5-VL-3B-Instruct
+	- Qwen/Qwen3-VL-8B-Instruct
+	- Qwen/Qwen3-VL-4B-Instruct
+	- InternVL3.5-2B-Instruct
+	- InternVL3.5-4B-Instruct
+	- InternVL3.5-1B-Instruct
+	- erax-ai/EraX-VL-2B-V1.5
+	- 5CD-AI/Vintern-1B-v3_5
