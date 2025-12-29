@@ -30,6 +30,11 @@
 			  (e.g. `foo.bar.example.com`), by returning a `CNAME` record with its value.
 			  No proxying of any kind is set up. This type requires v1.7 or higher of `kube-dns`,
 			  or CoreDNS version 0.0.8 or higher.
+		- ports:
+			- `containerPort`: the port that app is listening on **inside the container**
+			- `Service` `port`: the port that `service` itself **exposes within the cluster**. Other pods in cluster will connect to the service on this port (e.g : **redis-service:6379**)
+			- `Service``targetPort`: the port on the *pod/container* that `Service` will forward traffic to. **This must match the containerPort**. If you omit targetPort, it defaults to the value of port.
+			- `NodePort`: This is a specific port that Kubernetes opens on the **actual host machine (the Node/VM)** for *every node in the cluster*. Traffic coming to **Any-Node-IP:NodePort** is then forwarded to the Service's port.
 		- e.g:
 			- expose service outside of cluster
 				- ```
