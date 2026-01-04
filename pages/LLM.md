@@ -126,4 +126,17 @@
 	-
 - ## Keywords
 	- Attention kernel
--
+- ## Serving
+	- ### latency metrics
+		- **TTFT (Time to First Token)**
+			- Time from request → first generated token
+			- Due to input encoding time
+			- Batching delays
+			- large cross-modal attention
+		- **TPT (Time per Token)**
+			- Average time to generate each additional token
+		- **End-to-end latency**: TTFT + (TPT × output tokens)
+		- **Throughput**
+			- Requests/sec or tokens/sec
+		- **Tail latency (P95/P99)**
+			- Worst-case user experience
