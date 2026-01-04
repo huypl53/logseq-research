@@ -3,4 +3,10 @@
 	- ## [[PagedAttention]]
 		-
 	- ## FlashAttention
--
+- ## Kernels
+	- for quantization compatible
+- ## Q&A
+	- does KV-cache work on VL models?
+	- how about quantizing
+	- how to self-quantize?
+	-

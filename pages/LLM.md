@@ -99,6 +99,7 @@
 	- [LLM Visualization](https://bbycroft.net/llm)
 	-
 - ## Inference
+  collapsed:: true
 	- Self-host:
 		- [[vLLM]]
 		- [[TGI]]
@@ -110,14 +111,18 @@
 		- [[PagedAttention]]
 		- [[FlashAttention]]
 - ## Performance
+  collapsed:: true
 	- TTFT: time to first token
 - ## Evaluation
+  collapsed:: true
 	- [[ELO]] algorithm
 - ## Disadvantages
+  collapsed:: true
 	- Performance
 		- Slow Decoding
 			- in autoregressive decoding, **store KV vector of seen tokens**, use them to generate next token
 - ## Techniques
+  collapsed:: true
 	- [[PagedAttention]]
 	- [[FlashAttention]]
 	- [[KV compression]]
@@ -127,6 +132,7 @@
 - ## Keywords
 	- Attention kernel
 - ## Serving
+  collapsed:: true
 	- ### latency metrics
 		- **TTFT (Time to First Token)**
 			- Time from request → first generated token
@@ -140,3 +146,5 @@
 			- Requests/sec or tokens/sec
 		- **Tail latency (P95/P99)**
 			- Worst-case user experience
+- ## Uncategorized
+	-
