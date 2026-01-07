@@ -1,11 +1,17 @@
 ## Concepts
 	- KV cache
 	- ## [[PagedAttention]]
-		-
+		- Efficient **KV cache management**, reduces memory fragmentation, enables larger batch sizes
 	- ## FlashAttention
+	- ### Continuous batching
+		- Maximizes GPU
 - ## Kernels
 	- for quantization compatible
--
+- ## Caching
+	- automatic prefix caching
+		- KV-prefix reuse across requests
+	- KV cache
+		-
 - ## Q&A
 	- does KV-cache work on VL models?
 	- how about quantizing
