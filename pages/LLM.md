@@ -132,7 +132,6 @@
 - ## Keywords
 	- Attention kernel
 - ## Serving
-  collapsed:: true
 	- ### latency metrics
 		- **TTFT (Time to First Token)**
 			- Time from request → first generated token
@@ -146,5 +145,20 @@
 			- Requests/sec or tokens/sec
 		- **Tail latency (P95/P99)**
 			- Worst-case user experience
+	- ## Flow
+		- Encoding: e.g multi modal data encoding
+		- Prefilling
+			- compute KV-cache for input prompt, prepare to generate first token
+		- Decoding:
+			- Auto-regressive generate next token $$token_t$$ based on $$t-1$$ previous tokens
+			-
 - ## Uncategorized
+-
+- ## Features
+	- [[vLLM/APC]]
+		- use KV cache to avoid re-compute **repeated long data or multi-round conversation**
+	- Batch invariance
+		- this ensure the the model's deterministic and independent of the batch size or the order of requests in a batch
+		- in beta mode, support some architectures
 	-
+-
