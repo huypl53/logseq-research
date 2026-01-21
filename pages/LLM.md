@@ -132,6 +132,7 @@
 - ## Keywords
 	- Attention kernel
 - ## Serving
+  collapsed:: true
 	- ### latency metrics
 		- **TTFT (Time to First Token)**
 			- Time from request → first generated token
@@ -155,6 +156,7 @@
 - ## Uncategorized
 -
 - ## Features
+  collapsed:: true
 	- [[vLLM/APC]]
 		- use KV cache to avoid re-compute **repeated long data or multi-round conversation**
 	- Batch invariance

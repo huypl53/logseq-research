@@ -84,3 +84,6 @@
 	- anti-affinity
 	- rolling updates container: after isolating container
 	- SLA
+- ## Todo
+	- minikube
+	-
