@@ -1,2 +1,81 @@
--
+- Serving Engine Ecosystem
+	- **SGLang** (Best for Agents &amp; Multi-turn)
+		- Core Feature: **RadixAttention**
+			- Manages KV cache as a Radix Tree (Trie) instead of a hash table
+			- Enables automatic, granular reuse of visual embeddings across requests
+			- Achieves up to **6.4x higher throughput** for structured/agentic workloads [1]
+		- Architecture Support
+			- Supports **E/P/D** (Encode-Prefill-Decode) disaggregation [2]
+			- Zero-overhead scheduler to hide Python runtime latency [3]
+	- **vLLM** (Standard &amp; Robust)
+		- Core Feature: **PagedAttention**
+			- Solves memory fragmentation (The 'Pizza Problem') [4]
+			- Allows non-contiguous memory allocation for massive visual contexts
+		- **Chunked Prefill**
+			- Splits large image prefill phases into chunks mixed with decode phases [5]
+			- Prevents 'latency spikes' (Inter-Token Latency) in continuous batching
+		- **Automatic Prefix Caching (APC)**
+			- Hash-based caching mechanism [6]
+			- Less granular than RadixAttention but effective for exact prefix matches
+	- **LMDeploy** (High Throughput)
+		- Engine: **TurboMind**
+			- C++ optimized inference engine delivering up to **1.8x** vLLM throughput [7]
+			- Features **Persistent Batching** and Blocked KV Cache natively
+			- Supports **4-bit KV Cache** quantization for massive context windows
+	- **TensorRT-LLM** (Hardware Specialized)
+		- **Disaggregated Serving**
+			- Physically decouples Vision Encoder (Compute-bound) from LLM (Memory-bound) [8]
+			- Uses **NIXL** (RDMA) for zero-copy tensor transfer between workers
+		- **FP8 Optimization**
+			- Native support for Hopper (H100) FP8 Tensor Cores
+- Quantization Strategies
+	- **The Modality Discrepancy**
+		- Visual tokens exhibit significantly higher **entropy and variance** than text tokens [9, 10]
+		- Standard text-based quantization (e.g., naive INT4) clips visual outliers, causing 'performance collapse'
+	- Quantization backend
+		- **FP16 / BF16** (Baseline)
+		- **INT4 (AWQ)**
+			- Recommended for VRAM-constrained setups (A10G/A100) [11]
+			- Protects salient (high-magnitude) weights crucial for visual features
+		- **FP8 (E4M3)**
+			- Recommended for H100/L40S; preserves dynamic range better than INT8 [12]
+		- **GPTQ** (limited but improving)
+			- Often slower than AWQ in vLLM; risk of degradation in VQA tasks [13]
+		- Many HF “quantized” models use **bitsandbytes**:
+	- Notes
+		- vLLM un-compatible:
+			- load_in_4bit=True
+				- This relies on:
+				- PyTorch custom ops
+				- runtime dequantization
+				- 🚫 vLLM does not use PyTorch forward()      🚫 vLLM cannot intercept bitsandbytes ops
+	- **Advanced Methods**
+		- **LUQ** (Layerwise Ultra-Low Bit)
+			- Keeps sensitive cross-attention layers at higher precision [10]
+		- **Q-VLM**
+			- Mines cross-layer dependencies to optimize quantization boundaries [14]
+- Visual Token Reduction
+	- **Dynamic Methods** (Recommended)
+		- **DyRate**
+			- Dynamically adjusts pruning rate during generation based on attention distribution [15]
+		- **VScan**
+			- Combines Global Scanning (structure) with Local Scanning (detail) [16]
+		- **DART**
+			- Prunes based on token duplication/similarity rather than attention scores [17]
+		- **DyMU**
+			- Dynamic Merging based on image complexity; training-free [18]
+	- **Static/Risky Methods**
+		- **FastV**
+			- Prunes tokens with low attention scores in deep layers
+			- ⚠️ **Warning:** Fails on localization/OCR tasks where small objects have low attention [19]
+	- **Video Optimization**
+		- **PEVLM**
+			- Block-wise parallel encoding; reduces attention complexity from quadratic to linear [20]
+- Decoding Acceleration
+	- **Medusa**
+		- Adds multiple decoding heads to predict future tokens in parallel [21]
+		- Achieves **2.2x - 3.6x** speedup; works well with frozen backbones
+	- **ViSpec**
+		- Vision-Aware Speculative Decoding
+		- Injects compressed visual features into the draft model to prevent hallucinations [22]
 -
