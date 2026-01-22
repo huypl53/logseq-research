@@ -1,5 +1,7 @@
 - Serving Engine Ecosystem
 	- **SGLang** (Best for Agents &amp; Multi-turn)
+	  collapsed:: true
+		- Pros: **structured response**
 		- Core Feature: **RadixAttention**
 			- Manages KV cache as a Radix Tree (Trie) instead of a hash table
 			- Enables automatic, granular reuse of visual embeddings across requests
@@ -7,17 +9,27 @@
 		- Architecture Support
 			- Supports **E/P/D** (Encode-Prefill-Decode) disaggregation [2]
 			- Zero-overhead scheduler to hide Python runtime latency [3]
-	- **vLLM** (Standard &amp; Robust)
+	- **vLLM** (Standard ; Robust)
+		- Pros
+			- superior for **outputs > prompts due to better memory handling.**
 		- Core Feature: **PagedAttention**
+		  collapsed:: true
 			- Solves memory fragmentation (The 'Pizza Problem') [4]
 			- Allows non-contiguous memory allocation for massive visual contexts
 		- **Chunked Prefill**
+		  collapsed:: true
 			- Splits large image prefill phases into chunks mixed with decode phases [5]
 			- Prevents 'latency spikes' (Inter-Token Latency) in continuous batching
 		- **Automatic Prefix Caching (APC)**
 			- Hash-based caching mechanism [6]
 			- Less granular than RadixAttention but effective for exact prefix matches
+	- **Deepspeed**
+		- Pros
+			- Excels in **long-prompt/short-output scenarios.**
+			-
 	- **LMDeploy** (High Throughput)
+		- Pros
+			-
 		- Engine: **TurboMind**
 			- C++ optimized inference engine delivering up to **1.8x** vLLM throughput [7]
 			- Features **Persistent Batching** and Blocked KV Cache natively
