@@ -5,6 +5,7 @@
 		- high VRAM usage
 	- LoRA
 		- **16-bit precision**
+		- keep base model's weights frozen and trains a small set of added lower-rank adapter weights
 		- $$h=W_0x + \Delta Wx = W_0x + BAx$$ $$  B \in \mathbb{R}^{d\times r},   A \in \mathbb{R}^{r\times k}$$
 			- only $$B,A$$ are trained
 		- LoRA is only applied to **attention layer**:"q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj",
@@ -21,8 +22,16 @@
 		- Paged Optimizers: Kỹ thuật giúp huấn luyện LLM mà không cần nhiều VRAM nhờ
 		  cơ chế luân chuyển dữ liệu giữa CPU và GPU một cách thông minh
 		-
+	- Post-trained
+	- DPO
+	- ORPO
+	- distillation
+	- [[Reinforcement learning (RL)]]
+		- GRPO
+		- GSPOReinforcement learning (RL)
 -
 - ## Hyper params
+  collapsed:: true
 	- Learning rate: Dựa nhiều vào kinh nghiệm và thực nghiệm, LR thường được dùng trong các mô hình ngôn ngữ lớn là 1**e-5 hoặc 2e-5**.
 	- Number of Epochs: Phụ thuộc vào learning rate và số lượng tokens:
 		- Dataset lớn khoảng hơn **2 triệu mẫu = 1-2 epochs**
@@ -32,6 +41,7 @@
 	- Batch size: 8 là con số hiệu quả tuy nhiên có thể lớn hơn phụ thuộc vào VRAM
 	- **LoRA rank: 16-64** tốt trong hầu hết các bộ dữ liệu
 - ## Parameters for finetuning
+  collapsed:: true
 	- r: rank
 	- target_modules: which modules to be finetuned
 	- lora_alpha: We suggest this to equal to the rank `r`, or double it.
@@ -71,8 +81,10 @@
 			  ```
 		- Llama-3 template
 - ## To answer
+  collapsed:: true
 	- when training LoRA, how LLM is loaded to VRAM, Just part of LoRA, how about updates to original weights
 	- self-supervisored learning
 - ## Experiment
+  collapsed:: true
 	- First, infer the model in sample to verify that **LLM is capable of tackling that task**
 	- max_sequence_lenght 1024
