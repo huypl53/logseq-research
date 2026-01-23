@@ -1,5 +1,4 @@
 - from library
-  collapsed:: true
 	- functools
 	  collapsed:: true
 		- wraps
@@ -40,7 +39,6 @@
 		- each thread run independently
 		- thread.Lock can be used to **sync shared state between thread**
 	- asyncio
-	  collapsed:: true
 		- event loop
 			- picks the most ready task from the task queue then run the picked task
 			- when the **task waits for another**, pick the next one to process
