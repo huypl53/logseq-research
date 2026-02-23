@@ -1,0 +1,30 @@
+- Computer vision
+	- Object detection
+	- Object tracking
+	- GAN
+	- Action recognition
+	- OCR
+	- Face detection
+	- eKYC
+- RAG
+- NLP
+	- LLM
+	- search
+		- hybrid search
+		- semantic search
+- ---
+- Miscs
+	- Model evaluation
+	- Serving
+		- Object detection: edge devices with low resources
+		- LLM: GPUs high throughput deployment
+	- Finetuning
+- Cloud
+	- Google
+	- AWS
+	- Azure
+		- OpenAI large-scale
+		- Azure cognitive services: voice and text-based interactions
+-
+-
+-
